@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1758902892059",
+    "fullName": "nam",
+    "email": "nam@gmail.com",
+    "password": "$2b$10$nb57/Dpar1NVFWS9C3AW6.BLhmuHp7VWgWD/UlInpUTmejIFIHYUG",
+    "createdAt": "2025-09-26T16:08:12.059Z",
+    "lastLogin": "2025-09-27T04:55:13.534Z",
+    "profile": {
+      "avatar": null,
+      "bio": "",
+      "preferences": {}
+    }
+  },
+  {
+    "id": "1758904175467",
+    "fullName": "hong",
+    "email": "hong@gmail.com",
+    "password": "$2b$10$ejYrLJ7tZZyB/kiHmxTYnOry.6q5UFjrfF8X1S7hPOhGVoOGZxcFa",
+    "createdAt": "2025-09-26T16:29:35.467Z",
+    "lastLogin": "2025-09-27T19:10:22.633Z",
+    "profile": {
+      "avatar": null,
+      "bio": "",
+      "preferences": {}
+    }
+  },
+  {
+    "id": "1758906710597",
+    "fullName": "lop",
+    "email": "lop@gmail.com",
+    "password": "$2b$10$F1WmBk.Gdwk44naYJxVjOuE22jfpHjZsPafdPhIZLS9DmnZJACaxO",
+    "createdAt": "2025-09-26T17:11:50.597Z",
+    "lastLogin": "2025-09-26T17:34:12.425Z",
+    "profile": {
+      "avatar": null,
+      "bio": "",
+      "preferences": {}
+    }
+  },
+  {
+    "id": "1758948178826",
+    "fullName": "kaka",
+    "email": "kaka@gmail.com",
+    "password": "$2b$10$5Lk5CBiTRMPhX7c.2aSZtuSHxs/WmYPHq21X/2K.qi92Gq.tIwZFq",
+    "createdAt": "2025-09-27T04:42:58.826Z",
+    "lastLogin": "2025-09-27T04:43:41.818Z",
+    "profile": {
+      "avatar": null,
+      "bio": "",
+      "preferences": {}
+    }
+  }
+]
