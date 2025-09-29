@@ -1,12 +1,12 @@
+//backend-service-login\server.js
 require('dotenv').config();
-
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const fileStorage = require('./utils/fileStorage');
 const { maskToken, maskSensitiveData, safeLog } = require('./utils/security');
-
+const captchaService = require('./services/captchaService');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-key';
@@ -371,7 +371,52 @@ app.post('/api/logout', async (req, res) => {
     res.status(500).json({ error: 'Lỗi server' });
   }
 });
+// Add after other requires
+// Add captcha endpoints
+// Generate new captcha
+app.get('/api/captcha/generate', async (req, res) => {
+  try {
+    const captcha = await captchaService.generateCaptcha();
+    res.json(captcha);
+  } catch (error) {
+    console.error('Captcha generation error:', error);
+    res.status(500).json({ error: 'Failed to generate captcha' });
+  }
+});
 
+// Verify captcha
+app.post('/api/captcha/verify', async (req, res) => {
+  try {
+    const { sessionId, positionX, duration } = req.body;
+    const result = await captchaService.verifyCaptcha(sessionId, positionX, duration);
+    res.json(result);
+  } catch (error) {
+    console.error('Captcha verification error:', error);
+    res.status(500).json({ error: 'Verification failed' });
+  }
+});
+
+// Serve captcha images
+app.get('/api/captcha/image/:sessionId/:type', async (req, res) => {
+  try {
+    const { sessionId, type } = req.params;
+    let imageBuffer;
+    
+    if (type === 'background') {
+      imageBuffer = await captchaService.getBackgroundImage(sessionId);
+    } else if (type === 'puzzle') {
+      imageBuffer = await captchaService.getPuzzleImage(sessionId);
+    } else {
+      return res.status(404).json({ error: 'Invalid image type' });
+    }
+    
+    res.set('Content-Type', 'image/png');
+    res.send(imageBuffer);
+  } catch (error) {
+    console.error('Image serve error:', error);
+    res.status(404).json({ error: 'Image not found' });
+  }
+});
 // Start server
 app.listen(PORT, () => {
   logWithTimezone('🚀 SERVER STARTED', {

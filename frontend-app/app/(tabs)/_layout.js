@@ -49,16 +49,6 @@ export default function TabsLayout() {
           headerTitle: '⚙️ Cài đặt',
         }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search-outline" size={size} color={color} />
-          ),
-          headerTitle: '🔍 Khám phá',
-        }}
-      />
     </Tabs>
   );
 }

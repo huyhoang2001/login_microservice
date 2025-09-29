@@ -1,19 +1,56 @@
+//frontend-app\lib\api\auth.js
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 
-// Fast URL detection with shorter timeout
-const getWorkingApiUrl = async () => {
-  const urls = [  
-    'http://10.0.0.100:3001/api',      
-    Platform.OS === 'android' ? 'http://10.0.2.2:3001/api' : 'http://localhost:3001/api',
+// Get device IP for network requests
+const getDeviceNetworkIPs = () => {
+  const ips = [];
+  
+  // Common local network ranges
+  const commonRanges = [
+    '192.168.1.',
+    '192.168.0.',
+    '192.168.100.',
+    '10.0.0.',
+    '172.16.0.'
   ];
+  
+  // Add your known IPs here
+  ips.push('192.168.100.219'); // Your fallback IP
+  
+  return ips;
+};
 
-  // Test URLs in parallel for speed
-  const testUrl = async (url) => {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 500); // 0.5s timeout
+// Enhanced URL detection with better error handling
+const getWorkingApiUrl = async () => {
+  const urls = [];
+  
+  // Platform specific URLs
+  if (Platform.OS === 'android') {
+    urls.push('http://10.0.2.2:3001/api'); // Android emulator
+  } else if (Platform.OS === 'ios') {
+    urls.push('http://localhost:3001/api'); // iOS simulator
+  }
+  
+  // Add localhost as fallback
+  urls.push('http://127.0.0.1:3001/api');
+  
+  // Add device network IPs
+  const deviceIPs = getDeviceNetworkIPs();
+  deviceIPs.forEach(ip => {
+    urls.push(`http://${ip}:3001/api`);
+  });
 
+  console.log('🔍 Testing API URLs:', urls);
+
+  // Test each URL
+  for (const url of urls) {
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2000);
+
+      console.log(`🔗 Testing: ${url}`);
+      
       const response = await fetch(`${url}/health`, {
         method: 'GET',
         signal: controller.signal,
@@ -24,56 +61,72 @@ const getWorkingApiUrl = async () => {
       });
       
       clearTimeout(timeoutId);
-      return response.ok ? url : null;
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log(`✅ API found at ${url}:`, data);
+        return url;
+      }
     } catch (error) {
-      clearTimeout(timeoutId);
-      return null;
-    }
-  };
-
-  // Test all URLs in parallel
-  const results = await Promise.allSettled(urls.map(testUrl));
-  
-  for (const result of results) {
-    if (result.status === 'fulfilled' && result.value) {
-      console.log(`✅ Found API: ${result.value}`);
-      return result.value;
+      console.log(`❌ ${url} failed:`, error.message);
     }
   }
 
-  throw new Error('No server found');
+  // Final fallback
+  const fallbackUrl = Platform.OS === 'android' 
+    ? 'http://10.0.2.2:3001/api' 
+    : 'http://localhost:3001/api';
+    
+  console.warn(`⚠️ No working API found, using fallback: ${fallbackUrl}`);
+  console.warn('💡 Make sure your backend is running on port 3001');
+  console.warn('💡 If using device, update IP in auth.js');
+  
+  return fallbackUrl;
 };
 
 class AuthAPI {
   constructor() {
     this.baseURL = null;
     this.initialized = false;
-    this.timeout = 2500; // 2.5s timeout
-    this.fallbackURL = 'http://192.168.100.219:3001/api';
+    this.timeout = 10000; // 10s timeout for images
   }
+// Thêm method mới trong class AuthAPI
 
+
+
+// Giữ nguyên method login cũ để backward compatibility
   async initialize() {
-    if (this.initialized && this.baseURL) return;
+    if (this.initialized && this.baseURL) {
+      return this.baseURL;
+    }
     
     try {
+      console.log('🚀 Initializing AuthAPI...');
       this.baseURL = await getWorkingApiUrl();
       this.initialized = true;
+      console.log('✅ AuthAPI initialized with:', this.baseURL);
+      return this.baseURL;
     } catch (error) {
-      // Fast fallback
-      this.baseURL = this.fallbackURL;
+      console.error('❌ API initialization failed:', error);
+      // Use platform-specific fallback
+      this.baseURL = Platform.OS === 'android' 
+        ? 'http://10.0.2.2:3001/api'
+        : 'http://localhost:3001/api';
       this.initialized = true;
+      return this.baseURL;
     }
   }
 
   async request(endpoint, options = {}) {
-    // Fast init check
-    if (!this.initialized) {
+    // Ensure initialization
+    if (!this.initialized || !this.baseURL) {
       await this.initialize();
     }
 
     const url = `${this.baseURL}${endpoint}`;
+    console.log(`📡 Request to: ${url}`);
     
-    // Get token once
+    // Get token
     const token = await AsyncStorage.getItem('token');
     
     const config = {
@@ -86,12 +139,12 @@ class AuthAPI {
       ...options,
     };
 
-    // Optimize JSON stringify
+    // Stringify body if needed
     if (config.body && typeof config.body === 'object') {
       config.body = JSON.stringify(config.body);
     }
 
-    // Fast timeout with AbortController
+    // Request with timeout
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), this.timeout);
 
@@ -102,22 +155,22 @@ class AuthAPI {
       });
 
       clearTimeout(timeoutId);
+      console.log(`📡 Response status: ${response.status}`);
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         const error = new Error(errorData.error || `HTTP ${response.status}`);
         error.status = response.status;
         
-        // Fast error mapping
+        // User-friendly error messages
         const errorMessages = {
           400: errorData.error || 'Dữ liệu không hợp lệ',
           401: 'Email hoặc mật khẩu không đúng',
           403: 'Không có quyền truy cập',
           404: 'Không tìm thấy dịch vụ',
           500: 'Server đang gặp sự cố. Vui lòng thử lại sau.',
-          502: 'Server đang gặp sự cố. Vui lòng thử lại sau.',
-          503: 'Server đang gặp sự cố. Vui lòng thử lại sau.',
-          504: 'Server đang gặp sự cố. Vui lòng thử lại sau.'
+          502: 'Không thể kết nối đến server',
+          503: 'Server đang bảo trì',
         };
         
         error.userMessage = errorMessages[response.status] || 'Có lỗi xảy ra. Vui lòng thử lại.';
@@ -129,15 +182,15 @@ class AuthAPI {
     } catch (error) {
       clearTimeout(timeoutId);
       
-      // Fast error handling
       if (error.name === 'AbortError') {
         const timeoutError = new Error('Request timeout');
         timeoutError.userMessage = 'Kết nối quá chậm. Vui lòng thử lại.';
         throw timeoutError;
       }
       
-      if (error.message.includes('Network request failed')) {
-        error.userMessage = 'Không thể kết nối đến server. Vui lòng thử lại.';
+      if (error.message === 'Network request failed') {
+        console.error('🔌 Network error - Backend may not be running');
+        error.userMessage = 'Không thể kết nối. Kiểm tra kết nối mạng và thử lại.';
       } else if (!error.userMessage) {
         error.userMessage = 'Có lỗi kết nối. Vui lòng thử lại.';
       }
@@ -152,7 +205,6 @@ class AuthAPI {
       body: userData
     });
     
-    // Parallel storage operations
     if (data.token && data.user) {
       await Promise.all([
         AsyncStorage.setItem('token', data.token),
@@ -169,7 +221,6 @@ class AuthAPI {
       body: credentials
     });
     
-    // Parallel storage operations for speed
     if (data.token && data.user) {
       await Promise.all([
         AsyncStorage.setItem('token', data.token),
@@ -181,7 +232,6 @@ class AuthAPI {
   }
 
   async logout() {
-    // Parallel operations - don't wait for server
     const [serverLogout] = await Promise.allSettled([
       this.request('/logout', { method: 'POST' }),
       AsyncStorage.multiRemove(['token', 'user'])
@@ -202,22 +252,29 @@ class AuthAPI {
       await this.request('/profile');
       return true;
     } catch (error) {
-      // Fast auth check
       if (error.status === 401) {
-        AsyncStorage.multiRemove(['token', 'user']); // Don't wait
+        AsyncStorage.multiRemove(['token', 'user']);
         return false;
       }
-      return true; // Assume logged in for network errors
+      // Assume logged in for network errors
+      return true;
     }
   }
 
-  // Quick config info
+  // Get current config
   getConfig() {
     return {
       baseURL: this.baseURL,
       initialized: this.initialized,
       timeout: this.timeout
     };
+  }
+
+  // Force reinitialize (for debugging)
+  async forceReinitialize() {
+    this.initialized = false;
+    this.baseURL = null;
+    return await this.initialize();
   }
 }
 
