@@ -1,3 +1,24 @@
+#### How to use
+
+Use 2 cmd tabs:
+- First Tab & Scan the QR code when displayed
+```sh
+cd/ frontend-app
+```
+```sh
+npx expo start --clear
+```
+- Second Tab
+```sh
+cd/ backend-service-login
+```
+```sh
+npm start
+```
+or
+```sh
+npm server.js
+```
 📋 API Communication Rules & Guidelines
 🔐 Authentication System Rules
 Token Management
