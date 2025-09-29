@@ -1,7 +1,6 @@
-import { Stack } from 'expo-router';
+import { Stack, useRouter, useSegments } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { useRouter, useSegments } from 'expo-router';
-import { authAPI } from '../lib/api/auth';
+import { authAPI } from '../src/api/auth';
 
 export default function RootLayout() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);  // null = chưa biết

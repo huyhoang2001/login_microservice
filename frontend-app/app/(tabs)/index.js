@@ -1,16 +1,16 @@
 //frontend-app\app\(tabs)\index.js
-import React, { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useRouter } from 'expo-router';
+import { useEffect, useState } from 'react';
 import {
-  View,
+  Alert,
+  ScrollView,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  Alert,
-  ScrollView
+  View
 } from 'react-native';
-import { useRouter } from 'expo-router';
-import { authAPI } from '../../lib/api/auth';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { authAPI } from '../../src/api/auth';
 
 export default function HomeScreen() {
   const [user, setUser] = useState(null);

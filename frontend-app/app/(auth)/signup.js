@@ -1,67 +1,18 @@
-import React, { useState } from 'react';
+import { Link, useRouter } from 'expo-router';
+import { useState } from 'react';
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
   Alert,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
   StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import { useRouter, Link } from 'expo-router';
-import { authAPI } from '../../lib/api/auth';
-import FloatingLabelInput from '../../lib/components/FloatingLabelInput';
-
-// ... imports
-const handleSignup = async () => {
-  if (!fullName?.trim() || !email?.trim() || !password) {
-    Alert.alert('Lỗi', 'Vui lòng điền đầy đủ thông tin');
-    return;
-  }
-
-  if (password.length < 6) {
-    Alert.alert('Lỗi', 'Mật khẩu phải có ít nhất 6 ký tự');
-    return;
-  }
-
-  setLoading(true);
-  console.log('📝 Starting signup process...');
-  
-  try {
-    const result = await authAPI.signup({ 
-      fullName: fullName.trim(),
-      email: email.trim().toLowerCase(), 
-      password 
-    });
-    
-    console.log('✅ Signup successful, result:', {
-      message: result.message,
-      hasToken: !!result.token,
-      hasUser: !!result.user,
-      userId: result.user?.id
-    });
-    
-    // Navigate to profile immediately after successful signup
-    console.log('🚀 Navigating to profile...');
-    router.replace('/(tabs)/profile');
-    
-    // Show success message
-    setTimeout(() => {
-      Alert.alert('Thành công', result.message || 'Đăng ký thành công!');
-    }, 500);
-    
-  } catch (error) {
-    console.error('❌ Signup failed:', error);
-    const errorMessage = error.userMessage || 
-                        error.message || 
-                        'Đăng ký thất bại. Vui lòng thử lại.';
-    Alert.alert('Lỗi đăng ký', errorMessage);
-  }
-  
-  setLoading(false);
-};
+import { authAPI } from '../../src/api/auth';
+import FloatingLabelInput from '../../src/components/ui/FloatingLabelInput';
 
 export default function SignupScreen() {
   const [fullName, setFullName] = useState('');
@@ -69,34 +20,287 @@ export default function SignupScreen() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  
+  // Error states
+  const [fullNameError, setFullNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  
   const router = useRouter();
 
-  const handleSignup = async () => {
-    if (!fullName || !email || !password || !confirmPassword) {
-      Alert.alert('Lỗi', 'Vui lòng điền đầy đủ thông tin');
-      return;
+  // Clear error when user starts typing
+  const clearErrors = () => {
+    setFullNameError('');
+    setEmailError('');
+    setPasswordError('');
+    setConfirmPasswordError('');
+  };
+
+  // Email validation function - English only
+  const validateEmail = (email) => {
+    if (!email || !email.trim()) {
+      return { isValid: false, message: 'Vui lòng nhập địa chỉ email' };
     }
 
-    if (password !== confirmPassword) {
-      Alert.alert('Lỗi', 'Mật khẩu xác nhận không khớp');
-      return;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      return { isValid: false, message: 'Định dạng email không hợp lệ' };
+    }
+
+    const localPart = email.trim().split('@')[0];
+    const latinOnlyRegex = /^[a-zA-Z0-9._+-]+$/;
+    if (!latinOnlyRegex.test(localPart)) {
+      return { 
+        isValid: false, 
+        message: 'Email chỉ được chứa chữ cái tiếng Anh, số và các ký tự đặc biệt (. _ + -) trước dấu @' 
+      };
+    }
+
+    const commonDomains = [
+      'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 
+      'live.com', 'icloud.com', 'protonmail.com', 'yandex.com',
+      'aol.com', 'mail.com', 'zoho.com', 'fastmail.com'
+    ];
+    
+    const emailLower = email.trim().toLowerCase();
+    const domain = emailLower.split('@')[1];
+    
+    if (!commonDomains.includes(domain)) {
+      return { 
+        isValid: false, 
+        message: 'Email phải sử dụng nhà cung cấp phổ biến (Gmail, Yahoo, Hotmail, Outlook, v.v.)' 
+      };
+    }
+
+    return { isValid: true, message: '' };
+  };
+
+  // Enhanced password validation function - Multi-language support
+  const validatePassword = (password) => {
+    if (!password) {
+      return { isValid: false, message: 'Vui lòng nhập mật khẩu' };
     }
 
     if (password.length < 6) {
-      Alert.alert('Lỗi', 'Mật khẩu phải có ít nhất 6 ký tự');
+      return { isValid: false, message: 'Mật khẩu phải có ít nhất 6 ký tự' };
+    }
+
+    if (password.length > 20) {
+      return { isValid: false, message: 'Mật khẩu không được vượt quá 20 ký tự' };
+    }
+
+    const hasLetter = /\p{L}/u.test(password);
+    if (!hasLetter) {
+      return { isValid: false, message: 'Mật khẩu phải chứa ít nhất một chữ cái (bất kỳ ngôn ngữ nào)' };
+    }
+
+    return { isValid: true, message: '' };
+  };
+
+  // Enhanced Full name validation function with multi-language support
+  const validateFullName = (fullName) => {
+    if (!fullName || !fullName.trim()) {
+      return { isValid: false, message: 'Vui lòng nhập họ và tên' };
+    }
+
+    const trimmedName = fullName.trim();
+
+    if (trimmedName.length < 2) {
+      return { isValid: false, message: 'Họ và tên phải có ít nhất 2 ký tự' };
+    }
+
+    if (trimmedName.length > 50) {
+      return { isValid: false, message: 'Họ và tên không được vượt quá 50 ký tự' };
+    }
+
+    const allowedCharactersRegex = /^[a-zA-ZÀ-ỹ\u0100-\u017F\u4e00-\u9fff\s]+$/;
+    
+    if (!allowedCharactersRegex.test(trimmedName)) {
+      return { 
+        isValid: false, 
+        message: 'Họ và tên chỉ được chứa chữ cái (Tiếng Việt, Tiếng Anh, Latin, Tiếng Trung) và khoảng trắng' 
+      };
+    }
+
+    if (/\s{2,}/.test(trimmedName)) {
+      return { isValid: false, message: 'Họ và tên không được chứa nhiều khoảng trắng liên tiếp' };
+    }
+
+    if (trimmedName !== fullName.trim()) {
+      return { isValid: false, message: 'Họ và tên không được bắt đầu hoặc kết thúc bằng khoảng trắng' };
+    }
+
+    if (trimmedName.replace(/\s/g, '').length === 0) {
+      return { isValid: false, message: 'Họ và tên phải chứa ít nhất một chữ cái' };
+    }
+
+    const hasValidLetter = /[a-zA-ZÀ-ỹ\u0100-\u017F\u4e00-\u9fff]/.test(trimmedName);
+    if (!hasValidLetter) {
+      return { isValid: false, message: 'Họ và tên phải chứa ít nhất một chữ cái hợp lệ' };
+    }
+
+    return { isValid: true, message: '' };
+  };
+
+  // Confirm password validation function
+  const validateConfirmPassword = (password, confirmPassword) => {
+    if (!confirmPassword) {
+      return { isValid: false, message: 'Vui lòng xác nhận mật khẩu' };
+    }
+
+    if (password !== confirmPassword) {
+      return { isValid: false, message: 'Mật khẩu xác nhận không khớp' };
+    }
+
+    return { isValid: true, message: '' };
+  };
+
+  // Handle real-time input filtering for fullName
+  const handleFullNameChange = (text) => {
+    clearErrors();
+    const filteredText = text.replace(/[^a-zA-ZÀ-ỹ\u0100-\u017F\u4e00-\u9fff\s]/g, '');
+    const cleanedText = filteredText.replace(/\s+/g, ' ');
+    setFullName(cleanedText);
+    
+    // Real-time validation
+    if (cleanedText) {
+      const validation = validateFullName(cleanedText);
+      if (!validation.isValid) {
+        setFullNameError(validation.message);
+      }
+    }
+  };
+
+  // Handle email input to ensure only Latin characters
+  const handleEmailChange = (text) => {
+    clearErrors();
+    const cleanedText = text.toLowerCase().replace(/[^a-z0-9@._+-]/g, '');
+    setEmail(cleanedText);
+    
+    // Real-time validation
+    if (cleanedText) {
+      const validation = validateEmail(cleanedText);
+      if (!validation.isValid) {
+        setEmailError(validation.message);
+      }
+    }
+  };
+
+  // Handle password change with real-time validation
+  const handlePasswordChange = (text) => {
+    clearErrors();
+    setPassword(text);
+    
+    // Real-time validation
+    if (text) {
+      const validation = validatePassword(text);
+      if (!validation.isValid) {
+        setPasswordError(validation.message);
+      }
+    }
+  };
+
+  // Handle confirm password change with real-time validation
+  const handleConfirmPasswordChange = (text) => {
+    clearErrors();
+    setConfirmPassword(text);
+    
+    // Real-time validation
+    if (text) {
+      const validation = validateConfirmPassword(password, text);
+      if (!validation.isValid) {
+        setConfirmPasswordError(validation.message);
+      }
+    }
+  };
+
+  const handleSignup = async () => {
+    console.log('📝 Starting signup validation...');
+
+    let hasError = false;
+
+    // Validate all fields
+    const fullNameValidation = validateFullName(fullName);
+    if (!fullNameValidation.isValid) {
+      setFullNameError(fullNameValidation.message);
+      hasError = true;
+    }
+
+    const emailValidation = validateEmail(email);
+    if (!emailValidation.isValid) {
+      setEmailError(emailValidation.message);
+      hasError = true;
+    }
+
+    const passwordValidation = validatePassword(password);
+    if (!passwordValidation.isValid) {
+      setPasswordError(passwordValidation.message);
+      hasError = true;
+    }
+
+    const confirmPasswordValidation = validateConfirmPassword(password, confirmPassword);
+    if (!confirmPasswordValidation.isValid) {
+      setConfirmPasswordError(confirmPasswordValidation.message);
+      hasError = true;
+    }
+
+    if (hasError) {
+      Alert.alert('Thông báo', 'Vui lòng sửa các lỗi trước khi tiếp tục');
       return;
     }
 
     setLoading(true);
+    console.log('📝 Starting signup process...');
+    
     try {
-      await authAPI.signup({ fullName, email, password });
-      Alert.alert('Thành công', 'Tài khoản đã được tạo thành công!', [
-        { text: 'OK', onPress: () => router.replace('/(tabs)') }
-      ]);
+      const result = await authAPI.signup({ 
+        fullName: fullName.trim(),
+        email: email.trim().toLowerCase(), 
+        password 
+      });
+      
+      console.log('✅ Signup successful, result:', {
+        message: result.message,
+        hasToken: !!result.token,
+        hasUser: !!result.user,
+        userId: result.user?.id
+      });
+      
+      // Clear form after successful signup
+      setFullName('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+      clearErrors();
+      
+      // Navigate to profile immediately after successful signup
+      console.log('🚀 Navigating to profile...');
+      router.replace('/(tabs)/profile');
+      
+      // Show success message
+      setTimeout(() => {
+        Alert.alert('🎉 Thành công', result.message || 'Đăng ký thành công!');
+      }, 500);
+      
     } catch (error) {
-      Alert.alert('Lỗi', error.response?.data?.error || 'Đăng ký thất bại');
+      console.log('ℹ️ Signup failed:', error.message);
+      
+      let errorMessage = 'Đăng ký thất bại. Vui lòng thử lại.';
+      
+      if (error.message === 'Email đã được sử dụng') {
+        errorMessage = 'Email này đã được đăng ký. Vui lòng sử dụng email khác hoặc đăng nhập.';
+        setEmailError('Email đã được sử dụng');
+      } else if (error.message === 'Dữ liệu không hợp lệ') {
+        errorMessage = 'Thông tin đăng ký không hợp lệ. Vui lòng kiểm tra lại.';
+      } else if (error.userMessage) {
+        errorMessage = error.userMessage;
+      }
+      
+      Alert.alert('Thông báo', errorMessage);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -109,6 +313,7 @@ export default function SignupScreen() {
         <ScrollView 
           contentContainerStyle={styles.scrollContainer}
           showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
         >
           <View style={styles.formContainer}>
             <View style={styles.header}>
@@ -120,30 +325,59 @@ export default function SignupScreen() {
               <FloatingLabelInput
                 label="Họ và tên"
                 value={fullName}
-                onChangeText={setFullName}
+                onChangeText={handleFullNameChange}
                 autoCapitalize="words"
+                placeholder="Nguyễn Văn A / John Smith / 王小明"
+                maxLength={50}
+                editable={!loading}
+                returnKeyType="next"
+                errorMessage={fullNameError}
+                showCharacterCount={false}
               />
               
               <FloatingLabelInput
-                label="Địa chỉ Email"
+                label="Địa chỉ Email (tiếng Anh)"
                 value={email}
-                onChangeText={setEmail}
+                onChangeText={handleEmailChange}
                 keyboardType="email-address"
                 autoCapitalize="none"
+                autoComplete="email"
+                textContentType="emailAddress"
+                placeholder="example@gmail.com"
+                editable={!loading}
+                returnKeyType="next"
+                errorMessage={emailError}
+                showCharacterCount={false}
               />
               
               <FloatingLabelInput
-                label="Mật khẩu"
+                label="Mật khẩu (6-20 ký tự, đa ngôn ngữ)"
                 value={password}
-                onChangeText={setPassword}
+                onChangeText={handlePasswordChange}
                 secureTextEntry
+                autoComplete="password"
+                textContentType="newPassword"
+                maxLength={20}
+                editable={!loading}
+                returnKeyType="next"
+                placeholder="password123 / mậtkhẩu123 / 密码123"
+                errorMessage={passwordError}
+                showCharacterCount={false}
               />
               
               <FloatingLabelInput
                 label="Xác nhận mật khẩu"
                 value={confirmPassword}
-                onChangeText={setConfirmPassword}
+                onChangeText={handleConfirmPasswordChange}
                 secureTextEntry
+                autoComplete="password"
+                textContentType="newPassword"
+                maxLength={20}
+                editable={!loading}
+                returnKeyType="done"
+                onSubmitEditing={handleSignup}
+                errorMessage={confirmPasswordError}
+                showCharacterCount={false}
               />
             </View>
             
@@ -151,6 +385,7 @@ export default function SignupScreen() {
               style={[styles.signupButton, loading && styles.buttonDisabled]}
               onPress={handleSignup}
               disabled={loading}
+              activeOpacity={0.8}
             >
               <Text style={styles.signupButtonText}>
                 {loading ? 'Đang tạo tài khoản...' : 'Tạo Tài Khoản'}
@@ -164,7 +399,10 @@ export default function SignupScreen() {
             </View>
 
             <Link href="/(auth)/login" asChild>
-              <TouchableOpacity style={styles.loginButton}>
+              <TouchableOpacity 
+                style={styles.loginButton}
+                disabled={loading}
+              >
                 <Text style={styles.loginButtonText}>
                   Đã có tài khoản? <Text style={styles.loginLink}>Đăng nhập ngay</Text>
                 </Text>
@@ -176,6 +414,7 @@ export default function SignupScreen() {
     </>
   );
 }
+// Giữ nguyên toàn bộ code, chỉ update styles:
 
 const styles = StyleSheet.create({
   container: {
@@ -202,7 +441,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 32, // Giảm từ 40 xuống 32
   },
   title: {
     fontSize: 32,
@@ -216,11 +455,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   inputSection: {
-    marginBottom: 32,
+    marginBottom: 16, // Giảm từ 32 xuống 24
   },
   signupButton: {
     backgroundColor: '#059669',
-    paddingVertical: 16,
+    paddingVertical: 18, // Tăng từ 16 lên 18 để match với input height
     borderRadius: 12,
     alignItems: 'center',
     marginBottom: 24,
@@ -245,7 +484,7 @@ const styles = StyleSheet.create({
   divider: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: 16,
   },
   dividerLine: {
     flex: 1,

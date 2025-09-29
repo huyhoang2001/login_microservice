@@ -1,7 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { router } from 'expo-router';
-import { authAPI } from '../../lib/api/auth';
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { authAPI } from '../../src/api/auth';
 
 export default function SettingsScreen() {
   const handleLogout = async () => {

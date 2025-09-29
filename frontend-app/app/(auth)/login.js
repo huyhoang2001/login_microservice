@@ -1,4 +1,3 @@
-//frontend-app/app/(auth)/login.js
 import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
@@ -13,9 +12,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { useRouter, Link } from 'expo-router';
-import { authAPI } from '../../lib/api/auth';
-import FloatingLabelInput from '../../lib/components/FloatingLabelInput';
-import SliderCaptcha from '../../lib/components/SliderCaptcha';
+import { authAPI } from '../../src/api/auth';
+import FloatingLabelInput from '../../src/components/ui/FloatingLabelInput';
+import SliderCaptcha from '../../src/components/auth/SliderCaptcha';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -26,6 +25,11 @@ export default function LoginScreen() {
   const [processingLogin, setProcessingLogin] = useState(false);
   const [apiBaseUrl, setApiBaseUrl] = useState(null);
   const [isInitialized, setIsInitialized] = useState(false);
+  
+  // Error states
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  
   const router = useRouter();
 
   // Refs to store current form values (prevent race conditions)
@@ -63,25 +67,125 @@ export default function LoginScreen() {
     }
   };
 
+  // Clear error when user starts typing
+  const clearErrors = () => {
+    setEmailError('');
+    setPasswordError('');
+  };
+
+  // Email validation function - English only
+  const validateEmail = (email) => {
+    if (!email || !email.trim()) {
+      return { isValid: false, message: 'Vui lòng nhập địa chỉ email' };
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      return { isValid: false, message: 'Định dạng email không hợp lệ' };
+    }
+
+    const localPart = email.trim().split('@')[0];
+    const latinOnlyRegex = /^[a-zA-Z0-9._+-]+$/;
+    if (!latinOnlyRegex.test(localPart)) {
+      return { 
+        isValid: false, 
+        message: 'Email chỉ được chứa chữ cái tiếng Anh, số và các ký tự đặc biệt (. _ + -) trước dấu @' 
+      };
+    }
+
+    const commonDomains = [
+      'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 
+      'live.com', 'icloud.com', 'protonmail.com', 'yandex.com',
+      'aol.com', 'mail.com', 'zoho.com', 'fastmail.com'
+    ];
+    
+    const emailLower = email.trim().toLowerCase();
+    const domain = emailLower.split('@')[1];
+    
+    if (!commonDomains.includes(domain)) {
+      return { 
+        isValid: false, 
+        message: 'Email phải sử dụng nhà cung cấp phổ biến (Gmail, Yahoo, Hotmail, Outlook, v.v.)' 
+      };
+    }
+
+    return { isValid: true, message: '' };
+  };
+
+  // Enhanced password validation function - Multi-language support
+  const validatePassword = (password) => {
+    if (!password) {
+      return { isValid: false, message: 'Vui lòng nhập mật khẩu' };
+    }
+
+    if (password.length < 6) {
+      return { isValid: false, message: 'Mật khẩu phải có ít nhất 6 ký tự' };
+    }
+
+    if (password.length > 20) {
+      return { isValid: false, message: 'Mật khẩu không được vượt quá 20 ký tự' };
+    }
+
+    const hasLetter = /\p{L}/u.test(password);
+    if (!hasLetter) {
+      return { isValid: false, message: 'Mật khẩu phải chứa ít nhất một chữ cái (bất kỳ ngôn ngữ nào)' };
+    }
+
+    return { isValid: true, message: '' };
+  };
+
+  // Handle email input to ensure only Latin characters
+  const handleEmailChange = (text) => {
+    clearErrors();
+    const cleanedText = text.toLowerCase().replace(/[^a-z0-9@._+-]/g, '');
+    setEmail(cleanedText);
+    emailRef.current = cleanedText;
+    
+    // Light real-time validation
+    if (cleanedText && cleanedText.includes('@') && cleanedText.includes('.')) {
+      const validation = validateEmail(cleanedText);
+      if (!validation.isValid) {
+        setEmailError(validation.message);
+      }
+    }
+  };
+
+  // Handle password change with basic validation
+  const handlePasswordChange = (text) => {
+    clearErrors();
+    setPassword(text);
+    passwordRef.current = text;
+    
+    // Light real-time validation
+    if (text && text.length > 0 && text.length < 6) {
+      setPasswordError('Mật khẩu phải có ít nhất 6 ký tự');
+    }
+  };
+
   const handleLoginPress = async () => {
     const currentEmail = emailRef.current || email;
     const currentPassword = passwordRef.current || password;
 
-    console.log('🔍 Login button pressed, checking form data:', {
-      email: currentEmail || 'EMPTY',
-      password: currentPassword ? 'HAS_PASSWORD' : 'NO_PASSWORD',
-      emailLength: currentEmail?.length || 0,
-      passwordLength: currentPassword?.length || 0
-    });
+    console.log('🔍 Login button pressed, validating form...');
 
-    // Validate inputs first
-    if (!currentEmail?.trim() || !currentPassword) {
-      Alert.alert('Lỗi', 'Vui lòng điền đầy đủ thông tin');
-      return;
+    let hasError = false;
+
+    // Validate email
+    const emailValidation = validateEmail(currentEmail);
+    if (!emailValidation.isValid) {
+      setEmailError(emailValidation.message);
+      hasError = true;
     }
 
-    if (!currentEmail.includes('@')) {
-      Alert.alert('Lỗi', 'Email không hợp lệ');
+    // Validate password
+    const passwordValidation = validatePassword(currentPassword);
+    if (!passwordValidation.isValid) {
+      setPasswordError(passwordValidation.message);
+      hasError = true;
+    }
+
+    if (hasError) {
+      Alert.alert('Thông báo', 'Vui lòng sửa các lỗi trước khi đăng nhập');
       return;
     }
 
@@ -101,17 +205,6 @@ export default function LoginScreen() {
   const handleCaptchaSuccess = async (captchaData) => {
     console.log('✅ Captcha verified successfully');
     
-    // Debug: check form state before closing modal
-    const currentEmail = emailRef.current || email;
-    const currentPassword = passwordRef.current || password;
-    
-    console.log('🔍 Form state before closing captcha:', {
-      email: currentEmail || 'EMPTY',
-      password: currentPassword ? 'HAS_PASSWORD' : 'NO_PASSWORD',
-      emailLength: currentEmail?.length || 0,
-      passwordLength: currentPassword?.length || 0
-    });
-    
     setShowCaptcha(false);
     setCaptchaVerified(true);
     
@@ -126,14 +219,7 @@ export default function LoginScreen() {
     const currentEmail = emailRef.current || email;
     const currentPassword = passwordRef.current || password;
     
-    // Debug: check form state when actually calling login
-    console.log('🔍 Form state at login execution:', {
-      email: currentEmail || 'EMPTY',
-      password: currentPassword ? 'HAS_PASSWORD' : 'NO_PASSWORD',
-      emailTrimmed: currentEmail?.trim() || 'EMPTY',
-      emailLength: currentEmail?.length || 0,
-      passwordLength: currentPassword?.length || 0
-    });
+    console.log('🔐 Starting login process...');
 
     // Final validation with current values
     if (!currentEmail?.trim()) {
@@ -154,7 +240,6 @@ export default function LoginScreen() {
 
     setLoading(true);
     setProcessingLogin(true);
-    console.log('🔐 Starting login process...');
     
     try {
       const loginData = { 
@@ -162,24 +247,17 @@ export default function LoginScreen() {
         password: currentPassword
       };
       
-      console.log('📤 Sending login request with data:', {
-        email: loginData.email,
-        hasPassword: !!loginData.password,
-        passwordLength: loginData.password?.length || 0
-      });
+      console.log('📤 Sending login request...');
       
       const result = await authAPI.login(loginData);
       
-      console.log('✅ Login successful:', {
-        message: result.message,
-        userId: result.user?.id,
-        hasToken: !!result.token
-      });
+      console.log('✅ Login successful');
       
       // Clear form ONLY after successful login
       setEmail('');
       setPassword('');
       setCaptchaVerified(false);
+      clearErrors();
       emailRef.current = '';
       passwordRef.current = '';
       
@@ -191,33 +269,31 @@ export default function LoginScreen() {
         Alert.alert('🎉 Thành công', result.message || 'Đăng nhập thành công!');
       }, 500);
       
-    } 
-    catch (error) {
-  // Chỉ log bình thường, không console.error để tránh red error
-  console.log('ℹ️ Login attempt failed:', error.message);
-  
-  // Enhanced error handling - user friendly
-  let errorMessage = 'Đăng nhập thất bại. Vui lòng thử lại.';
-  
-  if (error.message === 'Thiếu email hoặc mật khẩu') {
-    errorMessage = 'Thông tin đăng nhập bị thiếu. Vui lòng nhập lại.';
-  } else if (error.message === 'Tài khoản không tồn tại') {
-    errorMessage = 'Email chưa được đăng ký. Vui lòng kiểm tra lại hoặc đăng ký tài khoản mới.';
-  } else if (error.message === 'Sai mật khẩu') {
-    errorMessage = 'Mật khẩu không đúng. Vui lòng thử lại.';
-  } else if (error.userMessage) {
-    errorMessage = error.userMessage;
-  }
-  
-  // Gentle alert - không dùng ❌ icon
-  Alert.alert('Thông báo', errorMessage, [
-    { text: 'OK', onPress: () => {} }
-  ]);
-  
-  // Reset captcha verification on error but keep form data
-  setCaptchaVerified(false);
-} 
-    finally {
+    } catch (error) {
+      console.log('ℹ️ Login failed:', error.message);
+      
+      // Enhanced error handling
+      let errorMessage = 'Đăng nhập thất bại. Vui lòng thử lại.';
+      
+      if (error.message === 'Email không tồn tại') {
+        errorMessage = 'Email này chưa được đăng ký. Vui lòng kiểm tra lại hoặc đăng ký tài khoản mới.';
+        setEmailError('Email không tồn tại');
+      } else if (error.message === 'Mật khẩu không chính xác') {
+        errorMessage = 'Mật khẩu không chính xác. Vui lòng thử lại.';
+        setPasswordError('Mật khẩu không chính xác');
+      } else if (error.message === 'Email hoặc mật khẩu không chính xác') {
+        errorMessage = 'Email hoặc mật khẩu không chính xác. Vui lòng kiểm tra lại.';
+        setEmailError('Thông tin đăng nhập không chính xác');
+        setPasswordError('Thông tin đăng nhập không chính xác');
+      } else if (error.userMessage) {
+        errorMessage = error.userMessage;
+      }
+      
+      Alert.alert('Đăng nhập thất bại', errorMessage);
+      
+      // Reset captcha verification on error but keep form data
+      setCaptchaVerified(false);
+    } finally {
       setLoading(false);
       setProcessingLogin(false);
     }
@@ -230,14 +306,27 @@ export default function LoginScreen() {
     // DON'T clear email/password when closing captcha
   };
 
-  const handleEmailChange = (text) => {
-    setEmail(text);
-    emailRef.current = text;
-  };
+  // Handle forgot password
+  const handleForgotPassword = () => {
+    if (!email || !email.trim()) {
+      Alert.alert(
+        'Quên mật khẩu', 
+        'Vui lòng nhập email trước, sau đó nhấn "Quên mật khẩu?" để được hỗ trợ khôi phục.'
+      );
+      return;
+    }
 
-  const handlePasswordChange = (text) => {
-    setPassword(text);
-    passwordRef.current = text;
+    const emailValidation = validateEmail(email);
+    if (!emailValidation.isValid) {
+      Alert.alert('Email không hợp lệ', emailValidation.message);
+      return;
+    }
+
+    Alert.alert(
+      'Quên mật khẩu', 
+      `Chúng tôi sẽ gửi hướng dẫn khôi phục mật khẩu đến email: ${email}
+(Tính năng này sẽ được phát triển trong tương lai)`
+    );
   };
 
   // Check if button should be disabled
@@ -258,7 +347,7 @@ export default function LoginScreen() {
           <View style={styles.formContainer}>
             <View style={styles.header}>
               <Text style={styles.title}>Đăng Nhập</Text>
-              <Text style={styles.subtitle}>Chào mừng bạn quay lại!</Text>
+              <Text style={styles.subtitle}>Chào mừng bạn trở lại</Text>
             </View>
             
             {/* Show connection status */}
@@ -271,29 +360,45 @@ export default function LoginScreen() {
             
             <View style={styles.inputSection}>
               <FloatingLabelInput
-                label="Địa chỉ Email"
+                label="Địa chỉ Email (tiếng Anh)"
                 value={email}
                 onChangeText={handleEmailChange}
                 keyboardType="email-address"
                 autoCapitalize="none"
                 autoComplete="email"
                 textContentType="emailAddress"
+                placeholder="example@gmail.com"
                 editable={!isButtonDisabled}
                 returnKeyType="next"
+                errorMessage={emailError}
+                showCharacterCount={false}
               />
               
               <FloatingLabelInput
-                label="Mật khẩu"
+                label="Mật khẩu (6-20 ký tự, đa ngôn ngữ)"
                 value={password}
                 onChangeText={handlePasswordChange}
                 secureTextEntry
                 autoComplete="password"
                 textContentType="password"
+                maxLength={20}
                 editable={!isButtonDisabled}
                 returnKeyType="done"
                 onSubmitEditing={handleLoginPress}
+                placeholder="password123 / mậtkhẩu123 / 密码123"
+                errorMessage={passwordError}
+                showCharacterCount={false}
               />
             </View>
+            
+            {/* <TouchableOpacity
+              style={styles.forgotPasswordButton}
+              onPress={handleForgotPassword}
+              disabled={isButtonDisabled}
+              activeOpacity={0.7}
+            >
+              <Text style={styles.forgotPasswordText}>Quên mật khẩu?</Text>
+            </TouchableOpacity> */}
             
             <TouchableOpacity
               style={[
@@ -354,7 +459,6 @@ export default function LoginScreen() {
   );
 }
 
-// Giữ nguyên const styles = StyleSheet.create({...}) hiện có của bạn
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -380,7 +484,7 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 32,
   },
   title: {
     fontSize: 32,
@@ -400,19 +504,33 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     padding: 12,
     backgroundColor: '#fef3c7',
-    borderRadius: 8,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#f59e0b',
   },
   connectionText: {
     marginLeft: 8,
     color: '#92400e',
     fontSize: 14,
+    fontWeight: '500',
   },
   inputSection: {
-    marginBottom: 32,
+    marginBottom: 16,
+  },
+  forgotPasswordButton: {
+    alignSelf: 'flex-end',
+    marginBottom: 16,
+    paddingVertical: 8,
+    paddingHorizontal: 4,
+  },
+  forgotPasswordText: {
+    color: '#10B981',
+    fontSize: 14,
+    fontWeight: '500',
   },
   loginButton: {
     backgroundColor: '#10B981',
-    paddingVertical: 16,
+    paddingVertical: 18,
     borderRadius: 12,
     alignItems: 'center',
     marginBottom: 24,
