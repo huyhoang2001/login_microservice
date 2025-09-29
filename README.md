@@ -1,14 +1,17 @@
 #### How to use
-
-Use 2 cmd tabs:
-- First Tab & Scan the QR code when displayed
+- First you need install libs, as follows:
+```sh
+npm i
+```
+Use 2 cmd tabs
+- First Tab & Scan the QR code when displayed:
 ```sh
 cd/ frontend-app
 ```
 ```sh
 npx expo start --clear
 ```
-- Second Tab
+- Second Tab:
 ```sh
 cd/ backend-service-login
 ```
