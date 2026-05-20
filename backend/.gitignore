@@ -1,0 +1,10 @@
+# Thư mục chứa thư viện và gói
+node_modules/
+
+# File chứa biến môi trường nhạy cảm
+.env
+
+# Các file tạm và file log
+*.log
+npm-debug.log*
+.DS_Store

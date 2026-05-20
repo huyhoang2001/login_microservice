@@ -1,0 +1,197 @@
+[
+  {
+    "name": "Hồng Bàng (Hùng Vương)",
+    "period": "2879 TCN - 258 TCN",
+    "description": "Thời kỳ khởi thủy của dân tộc Việt Nam với truyền thuyết Con Rồng Cháu Tiên và 18 đời vua Hùng.",
+    "king_count": 1,
+    "capital": "Phong Châu (Phú Thọ)",
+    "start_year": "2879 TCN",
+    "tag": "Khởi Thủy",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": [
+      {
+        "title": "Trống đồng Đông Sơn",
+        "description": "Biểu tượng văn hóa của nền văn minh sông Hồng",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Nhà Ngô",
+    "period": "939 - 967",
+    "description": "Chấm dứt hơn 1000 năm Bắc thuộc sau chiến thắng Bạch Đằng năm 938, mở ra kỷ nguyên độc lập.",
+    "king_count": 3,
+    "capital": "Cổ Loa (Hà Nội)",
+    "start_year": 939,
+    "tag": "Phục Hồi",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": []
+  },
+  {
+    "name": "Nhà Đinh",
+    "period": "968 - 980",
+    "description": "Triều đại đặt nền móng cho nền độc lập tự chủ với tên nước Đại Cồ Việt, chấm dứt loạn 12 sứ quân.",
+    "king_count": 2,
+    "capital": "Hoa Lư (Ninh Bình)",
+    "start_year": "968",
+    "tag": "Thống Nhất",
+    "images": {
+      "banner": "/api/history/images/dynasties/dep-yen-cac-su-quan-1778836203898.jpg",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": []
+  },
+  {
+    "name": "Nhà Tiền Lê",
+    "period": "980 - 1009",
+    "description": "Triều đại kế thừa và phát triển đất nước sau nhà Đinh, đánh tan quân Tống xâm lược lần thứ nhất.",
+    "king_count": 2,
+    "capital": "Hoa Lư (Ninh Bình)",
+    "start_year": 980,
+    "tag": "Bảo Vệ",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": []
+  },
+  {
+    "name": "Nhà Lý",
+    "period": "1009 - 1225",
+    "description": "Thời kỳ hoàng kim của nền văn minh Đại Việt với sự ra đời của Văn Miếu - Quốc Tử Giám, Phật giáo phát triển rực rỡ.",
+    "king_count": 2,
+    "capital": "Thăng Long (Hà Nội)",
+    "start_year": 1009,
+    "tag": "Cường Thịnh",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": [
+      {
+        "title": "Văn Miếu - Quốc Tử Giám",
+        "description": "Trường đại học đầu tiên của Việt Nam",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Nhà Trần",
+    "period": "1225 - 1400",
+    "description": "Triều đại quân sự lừng lẫy với ba lần đánh bại quân Nguyên - Mông, kinh tế và văn hóa phát triển.",
+    "king_count": 2,
+    "capital": "Thăng Long (Hà Nội)",
+    "start_year": 1225,
+    "tag": "Vinh Quang",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": [
+      {
+        "title": "Hào khí Đông A",
+        "description": "Tinh thần quật cường của quân dân thời Trần",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Nhà Hồ",
+    "period": "1400 - 1407",
+    "description": "Triều đại tồn tại ngắn ngủi, đánh dấu nỗ lực cải cách mạnh mẽ nhưng thất bại trước sự xâm lược của nhà Minh.",
+    "king_count": 1,
+    "capital": "Tây Đô (Thanh Hóa)",
+    "start_year": 1400,
+    "tag": "Cải Cách",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": []
+  },
+  {
+    "name": "Nhà Hậu Lê",
+    "period": "1428 - 1789",
+    "description": "Triều đại dài nhất lịch sử phong kiến Việt Nam, bao gồm Lê sơ và Lê Trung Hưng, với nhiều biến động và chiến công hiển hách.",
+    "king_count": 3,
+    "capital": "Thăng Long (Hà Nội)",
+    "start_year": 1428,
+    "tag": "Trường Tồn",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": [
+      {
+        "title": "Quốc triều hình luật",
+        "description": "Bộ luật tiến bộ thời Lê sơ",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Nhà Mạc",
+    "period": "1527 - 1592",
+    "description": "Triều đại song song với nhà Lê Trung Hưng trong thời kỳ Nam - Bắc triều, có vai trò phát triển kinh tế nhưng không được chính sử công nhận.",
+    "king_count": 1,
+    "capital": "Thăng Long (sau rút lên Cao Bằng)",
+    "start_year": 1527,
+    "tag": "Phân Tranh",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": []
+  },
+  {
+    "name": "Nhà Tây Sơn",
+    "period": "1778 - 1802",
+    "description": "Triều đại khởi nghiệp từ cuộc khởi nghĩa nông dân, lập nên chiến công quét sạch ngoại xâm và thống nhất đất nước.",
+    "king_count": 1,
+    "capital": "Quy Nhơn / Phú Xuân",
+    "start_year": 1778,
+    "tag": "Sáng Tạo",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": []
+  },
+  {
+    "name": "Nhà Nguyễn",
+    "period": "1802 - 1945",
+    "description": "Triều đại cuối cùng trong lịch sử phong kiến Việt Nam, trải qua nhiều biến động và kết thúc với sự kiện Bảo Đại thoái vị.",
+    "king_count": 2,
+    "capital": "Phú Xuân (Huế)",
+    "start_year": 1802,
+    "tag": "Kết Thúc",
+    "images": {
+      "banner": "",
+      "map": "",
+      "emblem": ""
+    },
+    "cultural_highlights": [
+      {
+        "title": "Quần thể di tích Cố đô Huế",
+        "description": "Di sản văn hóa thế giới, biểu tượng quyền lực triều Nguyễn",
+        "image": ""
+      }
+    ]
+  }
+]

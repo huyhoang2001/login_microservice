@@ -1,0 +1,708 @@
+[
+  {
+    "name": "Hồng Bàng (Hùng Vương)",
+    "period": "2879 TCN - 258 TCN",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Các đời Hùng Vương",
+        "title": "Hùng Vương",
+        "birth_death": "Truyền thuyết",
+        "reign": "2879 TCN - 258 TCN",
+        "summary": "Quốc tổ của dân tộc Việt Nam, 18 đời vua Hùng đã dựng nên nước Văn Lang.",
+        "images": {
+          "portrait": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFRUXGBYXFRgYGBcaGhgXGBYXGhoYGBgYHSggGBslHRcYITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi8fHyUtLS0tKystLS0tLy0tLS0tLSstLS0tLS0tLS0rLS0tLS0tLS0tKy0tLS0tLS0tLS0tLf/AABEIANQA7gMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAEBQMGAAECBwj/xABBEAACAgEDAgQEAwUFBwQDAQABAgMRAAQSIQUxEyJBUQYyYXEUgaEjQlKRsQdicsHwFTNDgpKi0SSDsuFTY9IW/8QAGgEAAgMBAQAAAAAAAAAAAAAAAgMAAQQFBv/EAC0RAAICAQQCAAUCBwEAAAAAAAABAhEDBBIhMUFRExQiYXEy8CMzQ1KBobEF/9oADAMBAAIRAxEAPwC6k81m4ogTnUabucM08QA5GbLFHCxjOZwtHJXFZEnmNVd+mU/ZBJLHyc4hiANn+mPNT06vUYnnGHGW7gBxogdhR45wZBzkzis70zkMCBZvjDfC4A7YxYEgbjz9cG8Gsa6qEgWR9/UA/fF8jACz/r3wIyVBtEWp1VLsHqOf1/8AGJJDyfX65uY2SciOHGPkVJnL5A+StnDDGeACIjOJ3VVLMQqjkk8ADI59cqyLHRJJokdlvtu+pJAr64v6m7SS6ZEphKWIWrDVM0YVT7kLuv2cenfPm1MYL2Ow6Zzkk+EM6sWPbj6jOCMmh05j3REG4naPnuVU0p/Ndp/PB9RKgO0sF4DE/wB2zfI55AI45sjtdglmWzcLeJ73E1I6qLYhR9SB+pzScgEEEHsR2P1ByPV6wNGRpYYvMBvlaMbpDYJRUCu5HlXje3aq5vMg6DIkleGsT7QxaaQqvm81LGpZr57BRtvn+HFR1K7fCGPT1wuWSZyTgvjyGUouwotW22QWaPy7gKH3F/QWMLIzRGe7lCJQrsjORk5I2cEYxMU0cHNZs5rbhWCd3nJGdbcwjCKOazoVmVmiMpui0j1OI88Y8ggsD7Xi2KPnHulHGc6bOpFC7WLxXtgqTBPTn/LG3Uoe39MSa7+mSLtFkGu1rN24GKpThcmDMmaIRSFt2DOLzca85OsJPYX9s2orLfINDj8ZtQCyTVH9e9/fEvUdVYoAff8A8ZLObGLtQMXGFElIDYZG2SNkRx4lnL5HK1KTye1ACySSAAo/eNkUPU8ZKq4u691JIEG4E7zQC9xxe76du/1wckqgy4K5JBWs+D4Y5NQqyb3dYo1jci18d0ozMp55cCx6BiDZy1fD2jWH9jvZqAXc7bSshQs6RKx3r86sfTmwewFQ6h8YQfipTFEWi8eBkkX98RiFii7qrcyPtHAO8Uawno3WBLNqtVJGx1H/AAlW9pVV2BV54IK8k0KO708vmMyyOMr/AH0dqMW6FvxD0ecRo0YlmM02ojHiAN5Awp2oBg1LW9jwO9Xg2li2b1Rg1uwXYe4FV+0shUF0KHv3PGO+lfFIljkApZIQ8cKWDI5kO95Sp4tpFB/hUKea5yLp+lVUAFGhXBsCvQH6fl9gKA6Gi3ym0+kZ9S1HGl9wKLTSKCdysSVJDbtlLztaiGcXzyasDjgVzp+olDs1UEpQbQn4RY0jokX5SD9QSdvHH1LbZnEgzoS0sJGOOolHgTdWnhYF9MupilBA8JkfwzTEEeUul1zvDDt2JyTTSb0DUVPqp9D6j64c65EVx2PE4ebEZMil4ByucsuElczw8ahLBNmdbMmKZsLloqiHbnBGEFc4ZcslENZmSFc4rLKPZTDRwlJaztlvB3TOb32dU51UxOKZzjaVOMX+HhRopgXh3hcHS7DNfYZzJFXOMNHLQ5wpSdcA0LVBQEKO/f37dsXyLzj7XuvcfN74mZcKDvkFnEUG7mxxX3wLqUVH/P8A164xefau1RyfmJ/yxbKCe+ErsGXQtK5wVw8ae+2aEHPbC3IVTBFTE+i6GXkndmYiKbTso4IAklde57AeOre1KctMel+mBdUgaHfqFXevhSRaiO9viQNy20ngOtWDx+lFGoW+I/TtwkFfD3SIjDEyKga4ZV3BWAYaPYhcIdp2zRvYHqPQ510jpL+JAzvCytpZzK6rQAZoCwQjjb83Jsmjg3SOqFYg5K0yIGARmQlSzF05jK2zsaBYC+DwMh03WNm6ijKyQxkFTH+zicsygI8nz2QfLfmP0zmPadBOYFrPhe9OYlVoZFUSV5gWOpkKxoz9z8jBh6CrGVro2rlheHSqN6GWQGTuCo3WF9AAwJJv0y7SfE0cpCFtkjXJMTzzWzbEezBVJUA0bkZmAIpqb8V9Pl1GoGnQFCQKUFqiiI7Seo9yDydyigSRjMUpRmtpJxU4Pd2i1hb5HI9MjlXDo9NtUKDdAC/egBg8ykenGdiLOPJALLkZGENznOzGIUyEDMrJtuclMvgGiJlzkpkpGYMlhUQlMhIwxhkRjymyqBqzXhnDUgyYaa8HeXtPaSgzgwg5M4zknOYmdMD1EfGAfhQTjCRrOSJBhp0UDr05TRPp6YL1E9qHuP5VjNzQyFVB71zkT5IIJBgsqYx1tcgDAGzRFgNAkiZEYcMKZgjwrAaIIIqN0M6WEXhkWnsYRptLeDaLSAk02TjTgggiwRRHuD3GNG0tDO9Jpr5wXNBbTz3onSNTpnCJxEsjKXd9OWanBVPPA0hsPQt7pQLHFtPiPSTtKwEfixEEVWnPhnaxsKyq/pV+J6r9SIvjqPUGWo0JjjmSaQq21xcUSxlSb43B7pWJoAKbxX0rUapNTKWSaSF4whllrcrBHZSDSllLb+Cg27hzXA5eRds34ndFJXQTvrDFD5QsibZA20ofDV2ujupQeDzRAF129I6f0uKFSsa1Ztj3Zj7sx5Y4D8N6CCTWzshekC+K1UvjUY1VCfmpA98eqn0N2GTT1zebtLFbbozamT3NCthRwTVc/bGOqi54wUwWc3RSowyQt2Znh4w/C+/GaTTZdg7QHZmGL6Y0jgHtnUsI9BlbmXsE3g51Fp9xoY2i0F9+B/rthsGmVMqU34LUABOkqI7Jtj+gwWfTqKoAfbHbkntgsmjY4KXsJx9CkxYVp9KGHevvxkr6as7SOsKr6Bo9PY4LO2FnnBplznI2AyoThMTUOTmeHgUrG8LsgRK4vB3rI5JjnSGx9cOigeeEUcBMOHyPnCrhp0RgBhOSxwYxi0hIzp9PWTeugaBSPTCNLQzljWUbr+r6isikrEItxIWJhe1at38QgFfMByKsr5bIwW6RaL3/ALZ05sCVXr5vDIfb6ecrYTt+8R2xT1D450EAYSTeGQLraxZh7rsBDDv27Ubqsr887Sut6ITo21YmkkPib2pmFMhVCNnZKAG7kcjFnWPh+dgqEwpOguOLTp5YuTtklmkaqqr3LRo7QSLxKlu6DlFxfIL8X9eml/EanSgAxrFFJFLsdZNOUaYyMgLKf96K5sANfsKb0L4g1k3ESpBDHG+7wY9qEuUFkEkGSwtfY0O+Mlgm0yySMhkBjjG+A+VZOAokjI2KOa2j6VjqLrTKoBjTYxLPaNG73Y3MFVgpBX5v7pFCuM03LnizXBQVOxr0TXR6UvDIrxEiNkZwdjhIIgx8TtYa7JrvjKDqCS20ciuASDsYNVGq4+uVzq3U9dLOCEihSMOiPub9l4sShizqLsg7gSFUVy3rkum6FLJJJI6yvMnDlYo1CPVBvBYbZB28ytZBHBPOa8OWSSTRkzxjubTLCvJ5wxlBoKlH8yTlYT4mj0nh+MNrEE7rcwyBSVcxNL5opFPeJux8tCwxvmj6khRXDBlYBlZTwVPIN9qzSsl9Ctov/wBnGrPB9q/1/TIBBR4GNZ5gfp/TBZpgB/TLVlUiP8GoHJwdlFnCBMCMAml9MJFBTceuRlsEaahWQvqcNRBboZq4Gcmce+KJdQ2DvqD6ZewHeNZmF8n9c4OoHpigyH1vOvFy3EpzPYiwzQwB5Scj/GsvAAP3zm7WawyeauPXBWF9sHQsxs+uHQwYXRCD8MTkcunI4xuiVmnTK3koSeAcmjjrGJQZ3QrtluZKIdJwKySSAHNXWdFjgWQCl0dZTepnxnu7VpynB48PTll2+oNyGQ+nBX2xt8camTwvCjmEV00z15hCbG1T6O7Ch9FfsaOUGeOTSpHKimM360UYAdmC8HgXVKVANBqJCc0nJbE+TTp4U97RaF6on4llQhZEHgREk0Cx/bOUBo7dqgX6qRxuvOOr6jYG0yU0UyOJHtd/ihwH8Q8bvE8SNP8AmHYNYoUMoI1E1s88sjlo4rCxlydhMpLUt2KUbiymrrcHHS+tx/h9VCiCCVP2iBk8zRK3iBO9t5QyDkgenArIpKKUUA8cpScpDnrvQUii0GmKKNrKwjQsQvhnxJSDt8xaUoBYG7fQokZINGF0urmClWj1MkqkkszmJ1YMxs2KUKAP3QBXFZX3+MptRJJ+GV2ndUhh5ApPmkJ3drPrxWwH05cabrKpBLp53jEkfimRQfmbcWYqDyFJPrwMeu6M76sI6X8Pxw9Q10IoIY4mjHm4Rw3HJohdjqorgULrjOOoRy6TbNF5pdOx00q0xM8LhTCS26rCmNdxHJVhuF8rnSfV63UaqCfZJG0caA/JIi0zL6AUb5BN+IbojgLqGrk1kixSB0JaLxEYFDsjdmJog2tGQXXI49RY748q+g9krXHZx1n4yhmlXwwFUSxvIHYghlKxu2xTf+7JUg3e1OOObhCq1aVTeby/KSedwA45u7HfvlL0+qhaXWsFEjTSMqqAONqCO792ZSRRskryLBx507qrNDHaiNgKZVG3bJZEg9/n3Y7TTc7VFZ8fw0rY6kFcnAzID+8B+eAS6gnBJNT9HPuwSRlH0LqpUH6XmzbXbMu++hmdSB6nN/jBXbn9MUwTq97WVq77SDX3rthCjLSQO5k7PffO1KDvz7VkSxHCItGTl2kRWwWeS8H242HTj7YRpejAnzsFH8z+XHGXvSL2sRBM6EeWCXpO32I+/wCvGR/gefTA3omxl1j05J9sl/Bivc4Sq5jZztxsBBpq7YTGMxRki8YLdkOxnLHOWmAyJtSMiZCTN3kQc+2bZz7ZdkNnNbvU8D+mRNPi7reoBgkj5BkVoxXe3BHH5WfyOU/ZCpdRb8RJEvNTMZ3Bv5OPDUj6Js4979zjbr0Cfg593yrGzCgCQUG4MAfUFQchhQHUmWxRBVRfoCe38s76q/jMsCfKu15j6bQbVCfdmAJH8Kt7jMOO5zs6OWscEvsVmHoEWgjAYlg4K6mSyVQlt0TUT5Y4yWQkD/ibjwDRWt+GYpo38QUwFCRTTqeQfN/kfbnkXli/AM4I22DwbqjfpzwftlXXVrpRPC24IjFqBtljdYmJtrunkKgcnlQM06nDtqUXyZtNmbuMhZ8KdC1CIfw84ihFjf4URaQcUeAt17m/mN3h2p+G31avtnkJoq01IqEfwBB8+2/mJNdrPIw5ut+JE0alCySCGgWILlVNGxdAkqT6lD25AsEWjljiRUZAoWthUnn33BgefreZd81I0uMXFfcqmq+GY1Qtp/HhMb7SY5OX8obcVYFXbzD5qNj5u2L9b0NvEilk1EupjZKBYIo20W2SBVBI78Hj0P1tmgjlkSVEdVIPmBXklh33Xxxx8p+XFwdvA1ELgK0Sl/U2j7jfYc2rdvYe+DvkGoq69CP+y/4dikUzSWaY7UHlWu4J9b4FgEDmucMSEIZEFKsUjr7BVvco9gAjKPyx1/Z9AIoSt/LXP2RRf17d8K6L0qEz6yec7lWZNqvXhqRp4DuIrzNZHewKFAG83aTO1Jsx63Hapg/QPh46hRI5KRGitfNIPcWPKp9G7nuKFEvdX0UqoWCR1CnyqpFAXfFmvzPJ5JJOHQ68Ek3x6XwQOeK9P6/ywjTSXz75onNydsxRSjwiua/piz8zDZKBSShSrfmD8y/3Tx9jzlcGlMQQ6hmiVm2eKGjkiWS6Cyjwo2jDH5TZBsWwsXdurPfAxHqNPuG2zRsMtKVdSCCrqwIK8/Q8d8ilJLhgtq+Rfpz4EgTWqIVJpJ15gkPoC5/3LH+GShfZmx/PAA3lHl4wPozLGG0z00ZB2IwseEa8nm4KqSRXopQYHrdDqNGQdLIn4P8AejkjeVtPx/w9rqxh7Wtkp6ArwCWR+QlTHMemHc4XD08HuD+RyvQdS1TOAJdGYWAIlEcwr6LbmOS/Q7xXsccavpEtLJBq5RKvP7QhoZR/DJEoCqPZkAIv17ZcsgSoYHpy/wCv9f5ZyNAg73/P/wCsF6Z11Jw4UFXjbZNG3zRvXY+6nuGHDDkZPJqMpWwnQ2aX2yFpThghGdiMZn2lgCOxwhBxk/hjMCZaRAV0vI1iw4AZhUZdkIN9ZDIzXhpAGcA3l2QBcMPTKz8W6kxqOLKDf68M3kj7enMh/wCQD1y77Bnm3x0d7SgE2s8UQr2GnVxf5zNic82oMdpoKWVJhXQOm74kdyb+ZfoKofp/XH3wrpb0kLNZZ0V5G4tpCo3Maodx+QAA4AyEOsMBZuFRDf8AhVbJ/kMafDulePSwRv8AOsaB/wDHtG79bxOmjSG6qW5kzQcUP9HPLuvP4mqlaNFlbusZK7mEdJu8Nyvjx7kVhsLeZEBojPVtXKsaPI5pVUs32As5458WwusgUAu8pMjR03kke3dVaNSQAGRQQtmze4Cg+bEY1yFfD4BkjRFUsQDKef2b8naA3mNF2+Y3bfYC163U6qINuVJgvAZdyt/zR0wPpyD+QzzVNZqkmVtkjMeF7iUEd1jkUkSe5iYCv4AKGWbTfF03mSSLxGHdeElHHG6M8E/WkGZJRas3WnVeB101pmidoGRZGPmLqWUnaKAIYdvej37YofVSQq7anaWeCZnYCq8Iny9zwVcH/lPvWcQfFI08bKwYu/McZ8NStCjyJTYs3YW+eb4qqT9SmmJEjndR4Wjt3ENXJujtsdhSE9gStKL4LtW2WP4WaZ9NpX3KqSRKJFKksaAQAWa2MF5sX5j78OmMq6p4GC7QyzBv4g6bboEcjwyg7/KTz6V3+zh2/DQBu48vaqAXt73wP5/fL11Qf+qQgcmA3+Ui0P8AubHYOMjM2q5xJmoxRFcDHOnkJsCto4+pb/ID/Veouj0V8tm+nN5SeaZmK8tyu5tppgKB78d7Bs5sOfEzWILwGVecL1DdzgYbLQEgeeO+fUcg+x9/1zvQdRYkq6lSDXNENwOVI7jmuaPHb36lU1YA/PgH8wDWQ6tRQsgXwLI5PsL7nLImQS9HSOvApVFgIbIUH0jIYFV/uWF5/LCBqHEXNggURY/yJ/rkIkPbDtO4YUe/9cEl2U/qmlMjiaN2i1CDySKxF1yEkA4dO/BBqzXqCd0/qOtoeMYGNVwHWz77rIP22rjDqHTOSVH5f+MBRSPocIm5rg9Q3ZG01Zto8jeDA4NJydV9MjknOSLps08GVwUDjWMP/vMGrb6fyzsw5nhE/bLtFEcmobI0nI7HJ5NKCO+RppfplqirYQNYfbPMeu9YjfXyw2APHhZmJFBliCOO/FbF5PHJ+mekalSiMyqzFQSFHdiOwGeNfC0O9Z5WiUPudyp3beWJK8q5BU9t6sB7g3SM6W2jRgk4y3HpuoAlljiBHhjbLIRyNikFE4/jYfmsbjHr9QAPb78559/ZlphHFNqZGVWnfyJe5/Di3KCAPMQWL0APr68WGad5eEQwr/8AkkFOe3yQnt3PMm2j+6ww8cEoi8s7kMOpawTMkS3Q2ySfZW8i/m639o2HrnnE0U+r1c2phk2IpCRUKtUvz2CCQzszDmqYd8a9X00kUssUQCpLErSSbi0r7CVZTdbd3iVuvspAC0CH3wz04Q6ULXp9+TmfNL6qRp08aW9opHWtTO9ibYzClMgUKT7CaNiUdeeG4r6eqvSQrJE7SxLtEk+8OjSEOI9J5Q55VCQ/LWQW97y4fEul8p+vF+xo1iKTpExgjRSQdm4t6jxHkPLEij4Ygrv8v5hOKb5s0aiEVGLRU9dqVjJAeRlJq2JIX02qSxDAfX+fsx0Wsj2xs4KRoWAbjiKQFnS+5O+OwO26RudvlyDX9G1o5Ehss3PiOTXAC3ZI5vm/sM5foMn4V/FYSbZoZDZLdo9UKJJ5F197qsNSj5YvukkWD4GUhUk4qV3f961LFh4fmN+Uhv8Aq7DPRdOu/UyN6JHDGPo37SRv+14/0zyb4Y6nJEzxGAttkZ1Ylhw1EgUh9TfcZdeg6ydxrCbUtKAgrbX7GNbBs0K2+poqfegzDF/EbF6qUdiivBY9X1YFjHFZIJVyoY7TQ4BAIU0bujX9NdO0pQVYoABVG6lA9rJH8gM50GmEa1z2F2xPb29B+QF5uaf0HbNhzmznUS2fpkWZmZYLOhnBS7U9jgg15/EeDs48MOGv60QRXH88NcZVkFmp0Mqm43DL7OTx7AHkn7k19MidUf5gCQaPIJUjuLB4x1D9ci1WmU/Q+4q+PTkZCEWglPyk7hzye6j0Fn5szVxc9sFoqT+n2+uGJPY5yygCDruvWgNRG31lgBY/cxug/TG+j6trTRZ9O3uPCdP5N4rV/I5V11HPYA+/+vvhjdTcdj6fbn/xkcUKWd+WWY/GcUZ2aiOaFvcRvLG31WWNSK9KYK30w2L4n0rLu8ZAvu9xj+cgGUtdYxNsb/TjngkckfTCNDq/Ds2Wsea9vcdqAA9z6/8A1W0ctQi1j4m0pFh2YehWKZgfsVQg5HN8V6VPnd4x/E8M6L/1vGF/XE0XVYAd1FT67bAP+ICg354cnXkIO2x9TwP65NoSzJm5PjTR3SNLKe37HT6iTn2tIyP1yDVfGW3tCkZJIUamdImYgWdsUYkcn+6QD9MQ9W63BMzRNq5HNgGOMsBYI8p8PnuOQW9SO3Ga6IIkFpD4V7iQaD2T6heDZs2ST/PK2lvKkM+r9f1ZQBRAjOtkJ4jsiHcN25ggVjRobTyD6KcocfSpkSYIylL3BK5Cq1lFkI3KtceoA5FY963qGSdZCHEbJtsHuylmK2OVZgAB78gcnJpNQFAtgIo2KSla3PJ4ZcBq+SPdSgH5jS9vnx5lNzpHR088SxXJDTo6O0UZ0axaeEqAP2duRwADyKIIYG7JP6s4emBfPLLJI3J5Yiif4Qm2hyR2wToOsVNJp1A5EUd/faLP5mzf1wLrHVwiPI5pEUs32AvNiXBy5SV0iPx/HnmIBpXjhB5ryLvPI/vTAf8ALloDjwwFIIBrj3Fgj7gispf9nzk6BJ3rdI0szH6vK5//AJH5ZZ+mSgxDuLJNH0+g+3b7g5zZv62diC/hxQl+LiSFjU0zlUU/3nYIv/cwyifEPW38d/BI2FztUqrDYgEcZAYeXyID+eXD4p1uxjIO8cbOB/eA2ofyleM+/HGeWakeYAdvQDgVXb6k979byY19LOhgxxle5XS/6E9Q+IdSV2hwB60i1+oI7H9DhfQ5nk0sxZtzGfToL4FGPV3QHA7nEOtHAr1F/mOD+l5Y/hJd2nAHdtUG/KOAr/WbCkkolTxxjJUvJxqU8Pqc1mNQXBUN4m5vJH8qoDv5B9LFZ6F8KEVM3IPiUynuGVfmYWQCylargqENAkjK5o9KrdQkkckrbkKTwCs0sVgDv/u+5PG413yx9c6hpkkj8G21SmKOSONXYtGzAEPtUjcgcyAfMAD6Mcfjn9dfY5OfHcNy9sfNNfGR3gsc4N0exog2CD7EHkGiDR9xg8HU1aZ4drhkANkDaQQOQQfqM1nMsZ3mici35w0mQli/q04j1Gmdq2FmjLfwsUYoT9DTD8xjndlL/tH07yaPdGSHikjkFAE/MFsE8rQYnjGvwr1PxtMjFtzDcjfRoyFb78813oj2vFuSi+Ryg5wteB4G5zcuQb8xZq74wUakivIwuGKRmNHeQhUd+YJcF3ZsNjDnhXinNh8F3Z1vyEsOCBh3I+xrOl6WjUTZr3dj/U4HEeecKOs2ihkCUxnBpFUUP65OhVfbK82sbjufz7f+cz8W5HYA/fsP88qg9451kyupRlVkIpgwsEfbA0bb2ZmO0JbNdKt0L7nknk2ee+LXZyf95Q9go/qbySPgVyfqST/XK2rsv4jqkxiNQffKL/al1jbCmnU8ync/+BTwPzb/AOJy2eJ7c/0/nni3xP1M6jUySE2L2r7bV4Fffv8AngyHadbnZ7L8L60r0WErQPhkD15DsBx96y4dLG2Ne/CqOTfpZ5/0B2HGeV/B2u3aDSwccySA37CW6r1+ccZ61ClRk+wv9KzkzTU2ejhXw4lD+J1aRJWFUDGrEmgoUyysxJ4UApBySB25ykvoZi/ETHg1sHicjmh4d3RB/LL2BIyPsVmDNOx2kcGoFU89yDGxHPB5/dANZTQ3qBahiQRQI3Ke/KyAO11+6p7n6U+EHsQC13wpygmuxRrOmzm/2Eq1ZO5GHf0tgB/o/nZfgPQEGJSCG8SUspBBHk01XfvXGKOqQKONi7l2hlraVZlUlEB8y8eXzcijeW/4cqJHlqhFHK3tbCWYMQPS9goexGBNfTQx6lze50R6mFRB+J3bGTxpN18GOSZpCp+/lIPoQPQkGpdJnaPUabV8hSz+Dv7Ddu8N5Np7lj5jfK7vc5ZdV0iSaPwd5EKbISooW0cccgYtVi7PY1+y57nEg+GJVE/7Y1E0Qjioed2VHWtzUpO77Vd0LrQ2t1Ls5mOT2fU+LsvqdUE07MCCWhidyu3b8zhDasbLKP5Rj3GJPizqo0ksGoNlSTG4rsK4cEchgTXrYP05L6J05NPHtHLNRdjVs35elk5r4i0a6jTSwt+8pr3DDla/MfrmmuOTC8ic/sN9B1BJkWSNrVgCPsf9fpnbvnk/9n/xKdPellakezGbFLI3AJB/d7nze/bPUNOsjD5Qe/mBqx6cG+49Qa+2Zp6qOOW2ZoWllJXDk1qQGUqwBB7g/fPPPgDqX7SbSsQfEYzRkGiCCT34IbkEfb6Z6DOjr8yMv37d/Vhajt73nj0mmki1jPGykwtuA7HYGG0bqpgaC3Z7+gwMjhmi1F+B2mUsT+peT2yJJqvh/wBDX9GP8vucxZw3Hr6j1H3HcfnmdB69FNFHIDSv2Ps1kbT7HGur0EUvLIrfXsR9mHIzDi1GTFw3f5N2bTY8nNV+BXHNWFx6jO20BBvxCwu6cK9D2BI3AfngM+hkZqFL3PAko0a9JOM2R18fKML0E/DK5HrkU+aHRy7QN6iOAlVsgWUHl9azjWfEfTFcKundxR3kSSrs7UPno/vXXbb2xJpujTKy+Qq92okBIkHJIVxuV+10CSvBoZuHohs7k8xNmqAH93/XfF79nbFNV4HHVF0SKskerKhiKFySCiQOQzFuNwvkev2yN5o1TxDPGYze1wsnJXuCtcfkWPuBgC9JrtV+axYB59rwI9NUkmiD2K0ebWruq+mFHVNeRUscZdxHLatVNFhdkccixd2R27etZMH9c46Z0GGwZGaMEd0IcEm/VR5e/Yj35x3L8GRSoQsx/wAQvvX7wBFjnkH0x0NZ7Ql6O/0iCbWbD5h5f4hzX+Idx9+3vXrKJ/rhnRvh9J1bw55I3jAjkglVXMUgsHceGcH0bdRr8gv6j0dtM7J4kbUN/hgsrhPVwjgWn1UkKe/FldCzxYuWmklaJxNmnkGT/wCwtQUDrHvVgCCjKePtYP6YC+klBoxSg+xje/5VzjFOL8i3jmu0DfEXUvC00rg0du1f8TeUH9b/ACzx3PSvjTTSPEsSimZwSGIThQf46rllyharpksYtkIX+IeZeyn5lsfvp/1DAk7Zu08dsD0H+yuLcYeDQeSvbkrz9vLX3GezRTpJpmkQnawcKTxe1mWx9CVsfTPIuh6BtPooZBuBYsG9wNm9q9QRbjt+778GTrvxnt0TQxySKREEopQtvKasA38xv0++YJLdNnVjL6Fz0rZa/hSYPpRIOzIzf9U+oYf9rJijpKhtRJYsc2DyO9dsg+HdS0eljXeUAjiLf7wrtMMbNZHAItjtHJqq8wyPQ9R2S3XJfYSCpQsdxHDMpjsLfLse3HIJ6GPLCCUTz2t0WbNkeSLJeprRUCwL7Amv5dsPcldG9DuYlP8AhfU2f0cj88SdT6mlqb45YMNpXbuCk8sKAJH877YYdazRRIFoeMBJyOVXxGQiie7qp/8AbPcUSGolCbio+y//ADcGfC5yy+n5LD0zqSxs6yX4UlbmAsxSLe2Su5HIuu21T2vJ+v8ATWDiYAMG2Osi8raK6AnbZKNHIQSLIO0qG5Br/i4R0/qckNiJyoPLIQGjYm7tDwLJ5K7SffJPE73R7HYtQktsugiPVhhx6cEWDRq6sGj3BsGiCCO+ZvwCOgWPFuxdyBVse5/oB7AAZKHxy65M8mr4PPuu9EvW+Eu7z7pF2k8C2PlWvpXcZafgz4rlgYaTUkLSjwnauw42tXf6H6HE3xrOjttj3NKikUoaxZU8UL7XZB9R+dFbRy8sUcVRNgjuaFXyfy9vpmTNiWS0zqafI4xTPpZOos6jdF+8vKsCrAEHj7j0Pvnm3xpqoYNdPI0bmN44qULRDm924PXfZu9jxzm/7OPidijRSbUePZtaSwnMgCq3PB8xA/LAv7UdTJO+1UV2QKHMCuwrz/Ma4PnA/L6Zhw4pRm4SN05pxUkZ/Z98QoXfTFP2bMXRTzz3r7k8fmPXPXIdEK3I7rfseDZ9Qb/Ss+Z9K0umkjloqfmX0NBipv25Bz3fo2u8eNJ49TsEleRuQrHuAe4597wdZiUZbl5G6fI5Rp+C0wqwHmbd9arBtZKy9lHehZ4+vbn2yGdNWrADwyL5J4Ne4/8AGCdXh1ToFVUBDXZeuKNcAZjH0vZSNF1ObTM0ZIlgJ80TjclfQH5Tj9odPqE3aaYwy0aikYvGT7WbKH7EgD901k2p+GS1kYu//wAmUJIVh9j/AJXnQuXlWLyYscxRL1V4XKzARP2KvtG4e6EmnH1UkYV0/rXsLX6civQj2yeWaZP2UqrLCPRuSK7EHuCPccisi3aZaLacvJz5/EaOQizQdo9viUOLayaFk5WyD+xmemlHrkZJNGTYW/chTX50MKLqaKttb0IHH/MvZh+vsR3xRB1OLcNrPFf/AA5aZG/wyqNyH6tuH0xvHOoosrR32LVsJ9hILQk+139MW8clygHBrsFlZmlDxyCHWAeSyCk6DkrZ+cduDyvHFbWBUnUI+oR+BKPB1UZtQbDI6/vIf3l9x3qj6A5rqGnVkZZF3xnm1/3kZHZ1rk19OR/eBoV7qUfyCeSwa/D6yPmwOQJNp5r0YGx3sjdToO0Zcq28+Bv8HdfeCV9JMApDcA9lY+390kjtwNy+hJy3y9YInjjHFxyuwsc7WhVf/m2eV/EUsqtE84HirQWUcxzxkH94cFqJvsSpuhWM+idQeTqUZJJQ6NlQn1qYE3/eFgH7X61hNPv7A4p87H/gJ+OesR/jEY3+wiTeRyATMs1N7eWHt/8AsGIek6UM8cRUbUkTdwPkgOp3jn0/9LCPzyydf6cmo07SMpLCSWNynlZkEpSvYsRGigkH9Tgut6UunZ5YXaQSabVyKDXe42FED18RvT1xkMq215GpXOjnUW8MUYIHlJs8j9rIZDY9f2a/yfKH1TRy6llVFsyMdpqgFTgtxwFs3f1Ayz9SlYQAILdl8npW9PCjJ9gI9zH28M4j6hrf2kWiRvDjPhrNJdExnkgeoXaSa7tf1rBxJ3ZUc38OVLlv/SLdFp94dm8oVB+8sahUSqDNXlAs7m4O41XcR9M6a4k8NFobA0YUMHKWGHnFGgwsNuK3Xerx/wBK1KapDJPccLFligNXNv273kAu4kN0D5eVJvy2brOlafe08wCBnVn5KiNQz724oXV8kHgKPTLcqdExravZ5/qQ0e1fDjDjjaQj3XcjxFcrZJFAn87yxdI0YmaKInbul3uUCLQSHUdlC7VomMVXG73JOTaeAHxZFLABXjWmCkMGjWQnw65tq57GI++TQxka7ycIqahRXYbJYY1r2FK3GLWVbmvRolTj12Ha/wCFivKToRwKk8p5NDzLYJsgdh3xceiTBgP2Xrz4h/oFs40nBeVE9FBlf7/LGD+e5vvEMKXRIT5gD9wDhfNZEjL8pjfgRv0qQdmj7gcsw7n/AAZkvSZqO3wya4tmAv0s7OBjXV9F0jeVokJc/wAPchbs17ADn7e4zhehxLwruosmg7VbCie/r39ry/mp+yvlMfooHVfhfVtH/u/Fl373opt4phRYixwy8dgwvCNL0HU/hCPBkLFSAUQkAsfOylee5bn+7x3y/DT12cmhXJJ/n7n65G7OPrgfNS9DXhTVXRS/iRY1gKzqVDSwhgeGI/aE8A2PkPeu2VDVJtEIBZWcuBy26mcqBuNdivc+5+uXfr0c8qSIkO+VpQxL1W1dm0knjgWoA5pcOk6Sm1AUsoFCmyK21VAGjRFi8Z8ddsJY9qpMrWmimk1WxVlETL5WCeICV22xpSWHlqx61gX+z9UvkXeHfxWaPbtpkokDgD1IsduAcuadIiG0hZBsFJTsCBzwCPN6+/t7Ym1Wja3ZZZldmY3uJB5tCwb1AqyKusB5oS4DgpRdhJ6x1RNkdks6s6sQtlV2ggKxsG3X7k8Z317qXU4oQwaNvOvy+U03iqB5u9eCSef31za6VnZXMku5RQNjyjxEchbHuijm+BzeFDpSmrecgbqBc92IPpXsa9txxV4vQ1ZZryXaKU1jDSPffMzMfDsOZnUOnRyIdy/mOMpeq0SBj5bo5mZlZUgsDYPrNKpTt2+2JfxTxMAjGmO0g8iiDYr1H0OZmYizVVo1BrXj1EcKnyOjPX8BBHCey89jdelDjAfiZvAaMxgBdTKEmj/cYmv2gA5WQfxKQeObzeZj4/zF+DmZ0uQz4XPitJopQHgZZPK3oVkC2pHy3d/fkVzcHwxKUfaDfhyqqk96eUxNde6gGu185mZly8nLfUfyWnphuDUj2m1Nfk24fqcU6tz4UA921EP/ALbSx2o/IAfbMzMUv1MfkdS4/tZW+uahvGiS6UzJuA9fm4P0pQK+/uc5+HelxzahfEBPi72c3yajZto9l4A+2azM0x/SVN1CK/fRculylpTKTzIV3j0KxtPIqD2UNAvA7213xUf9quvaJEiWipEhO4Wbih0zofb5jeZmYr+ohj/QOdHpVSGJR6+EWJ7sWZ9zE+pJUEn3xR03UsZDzyygX6jfqtQGr2J2jnMzMzw7mafCG3SpiWlb1MhT7LHSqB9O5+7HCE1ZaV0IFKsZHe/MGJvn6ZmZkn2yiNeXkPqtKPoCqsf5k8/4R7Ys8Q73NnghR7UFVu3vbHn7ZmZi30GFR6phmazqbpG7gLaozCwasKTzzmZmSHZPAdpxwAefqe5zsoPbMzMj7BEfxH1mTTttjCUYZJORZ3KyAevbzHANH1WWaCSUkKVkgUBQKp4kka91nuSO/b685mZm6MI7U6EzkzNWJFXd48ps7qJWhx8oAUeX6G830KYMreIiymz5pNznn23GlH0AGZmZGuDJOT9n/9k=",
+          "statue": "",
+          "gallery": []
+        },
+        "overview": "Thời đại Hùng Vương đóng vai trò mở đầu cho lịch sử Việt Nam. Các vua Hùng đã thiết lập nhà nước Văn Lang, tổ chức xã hội và tạo dựng nền tảng văn hóa dân tộc.",
+        "achievements": [
+          "Lập nước Văn Lang",
+          "Dạy dân cấy lúa",
+          "Sáng tạo bánh chưng, bánh giầy"
+        ],
+        "legacy": "Tên tuổi Hùng Vương được tôn vinh như biểu tượng thiêng liêng của Tổ quốc. Di sản văn hóa thời đại Hùng Vương vẫn in đậm trong tâm thức người Việt.",
+        "timeline": [
+          {
+            "year": "2879 TCN",
+            "title": "Dựng nước Văn Lang",
+            "type": "Chính trị",
+            "description": "Hùng Vương thứ nhất lên ngôi, đặt quốc hiệu Văn Lang, đóng đô ở Phong Châu.",
+            "impact": "Mở đầu lịch sử Việt Nam"
+          },
+          {
+            "year": "~ 1000 TCN",
+            "title": "Văn hóa Đông Sơn phát triển",
+            "type": "Văn hóa",
+            "description": "Thời kỳ đồ đồng rực rỡ với trống đồng, thạp đồng.",
+            "impact": "Đỉnh cao văn minh sông Hồng"
+          },
+          {
+            "year": "258 TCN",
+            "title": "Kết thúc",
+            "type": "Quân sự",
+            "description": "Thục Phán chiếm Văn Lang, sát nhập vào Âu Lạc.",
+            "impact": "Chuyển sang thời kỳ Âu Lạc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nhà Ngô",
+    "period": "939 - 967",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Ngô Quyền",
+        "title": "Tiền Ngô Vương",
+        "birth_death": "898 - 944",
+        "reign": "939 - 944",
+        "summary": "Anh hùng dân tộc với chiến thắng Bạch Đằng năm 938, chấm dứt thời kỳ Bắc thuộc.",
+        "images": {
+          "portrait": "/api/history/images/characters/image-20201115154246-1-1778775992944.png",
+          "statue": "",
+          "gallery": []
+        },
+        "overview": "Ngô Quyền đóng vai trò vô cùng quan trọng trong lịch sử độc lập đầu tiên. Những quyết sách và hành động của ông đã để lại dấu ấn lớn trong sử sách nước nhà.",
+        "achievements": [
+          "Chiến thắng Bạch Đằng năm 938",
+          "Xưng vương, lập ra nhà Ngô",
+          "Đặt nền móng cho nền độc lập"
+        ],
+        "legacy": "Tên tuổi của Ngô Quyền mãi được lưu truyền trong sử sách Đại Việt như một minh chứng cho giai đoạn lịch sử Nhà Ngô. Di sản của ông ảnh hưởng sâu sắc đến các thế hệ sau.",
+        "timeline": [
+          {
+            "year": 898,
+            "title": "Ra đời",
+            "type": "Tiểu sử",
+            "description": "Sinh tại Đường Lâm, Sơn Tây.",
+            "impact": "Khởi đầu của một anh hùng dân tộc"
+          },
+          {
+            "year": 938,
+            "title": "Chiến thắng Bạch Đằng",
+            "type": "Quân sự",
+            "description": "Đánh tan quân Nam Hán bằng kế cắm cọc gỗ.",
+            "impact": "Chấm dứt 1000 năm Bắc thuộc"
+          },
+          {
+            "year": 939,
+            "title": "Lên ngôi",
+            "type": "Chính trị",
+            "description": "Xưng Vương, đóng đô ở Cổ Loa.",
+            "impact": "Thành lập vương triều độc lập"
+          }
+        ]
+      },
+      {
+        "name": "Dương Tam Kha",
+        "title": "Ngô Bình Vương",
+        "birth_death": "? - 980",
+        "reign": "944 - 950",
+        "summary": "Em vợ Ngô Quyền, cướp ngôi của cháu Ngô Xương Ngập.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "overview": "Dương Tam Kha chiếm quyền trong bối cảnh triều đình non trẻ, gây chia rẽ nhưng cũng giúp duy trì sự tồn tại của vương triều trong 6 năm.",
+        "achievements": [
+          "Duy trì quyền lực trong 6 năm",
+          "Tiếp tục xây dựng đất nước sau Ngô Quyền"
+        ],
+        "legacy": "Dương Tam Kha là nhân vật gây nhiều tranh cãi trong lịch sử, người đã cướp ngôi nhưng cũng góp phần duy trì sự ổn định của đất nước.",
+        "timeline": [
+          {
+            "year": 944,
+            "title": "Cướp ngôi",
+            "type": "Chính trị",
+            "description": "Lợi dụng lúc Ngô Quyền mất, tự lập làm vua.",
+            "impact": "Gây chia rẽ triều đình nhà Ngô"
+          },
+          {
+            "year": 950,
+            "title": "Bị lật đổ",
+            "type": "Chính trị",
+            "description": "Bị Ngô Xương Văn lật đổ.",
+            "impact": "Nhà Ngô bước vào thời kỳ đồng trị vì"
+          }
+        ]
+      },
+      {
+        "name": "Ngô Xương Ngập & Ngô Xương Văn",
+        "title": "Hậu Ngô Vương",
+        "birth_death": "? - 965",
+        "reign": "950 - 965",
+        "summary": "Hai anh em cùng trị vì, kết thúc thời kỳ loạn lạc nội bộ.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "overview": "Sau khi lật đổ Dương Tam Kha, Ngô Xương Văn đón anh trai Ngô Xương Ngập về cùng làm vua. Nhưng mâu thuẫn không lâu sau lại phát sinh, đất nước suy yếu dần.",
+        "achievements": [
+          "Khôi phục ngôi vua cho dòng chính",
+          "Cùng cai trị 15 năm"
+        ],
+        "legacy": "Sự đồng trị vì của Hậu Ngô Vương cho thấy những khó khăn trong việc củng cố triều đại non trẻ, trước khi bước vào loạn 12 sứ quân.",
+        "timeline": [
+          {
+            "year": 950,
+            "title": "Đồng trị vì",
+            "type": "Chính trị",
+            "description": "Ngô Xương Văn lật đổ Dương Tam Kha, rước anh về cùng làm vua.",
+            "impact": "Tạm ổn định triều đình"
+          },
+          {
+            "year": 965,
+            "title": "Ngô Xương Văn tử trận",
+            "type": "Quân sự",
+            "description": "Đi dẹp loạn bị phục kích, kết thúc nhà Ngô.",
+            "impact": "Đất nước rối loạn, 12 sứ quân nổi lên"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nhà Đinh",
+    "period": "968 - 980",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Đinh Bộ Lĩnh",
+        "title": "Đinh Tiên Hoàng",
+        "birth_death": "924 - 979",
+        "reign": "968 - 979",
+        "summary": "Anh hùng dẹp loạn 12 sứ quân, thống nhất đất nước và lập nên quốc hiệu Đại Cồ Việt.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "overview": "Đinh Bộ Lĩnh đã chấm dứt tình trạng phân tán bằng tài năng quân sự xuất sắc. Ông xưng Hoàng đế và xây dựng chính quyền trung ương tập quyền.",
+        "achievements": [
+          "Dẹp loạn 12 sứ quân",
+          "Lập nước Đại Cồ Việt",
+          "Đặt niên hiệu riêng"
+        ],
+        "legacy": "Đinh Tiên Hoàng mở ra một kỷ nguyên độc lập vững chắc hơn cho dân tộc, là tiền đề cho các triều đại sau này.",
+        "timeline": [
+          {
+            "year": 968,
+            "title": "Lên ngôi",
+            "type": "Chính trị",
+            "description": "Xưng Hoàng đế, đóng đô ở Hoa Lư.",
+            "impact": "Thống nhất đất nước"
+          }
+        ]
+      },
+      {
+        "name": "Đinh Toàn",
+        "title": "Đinh Phế Đế",
+        "birth_death": "? - 1001",
+        "reign": "979 - 980",
+        "summary": "Vua nhỏ tuổi bị phế truất, nhường ngôi cho Lê Hoàn.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "overview": "Sau cái chết của cha, Đinh Toàn mới 6 tuổi lên ngôi, triều đình rối ren. Trước nguy cơ giặc Tống xâm lược, Thái hậu Dương Vân Nga đã nhường ngôi cho Lê Hoàn.",
+        "achievements": [
+          "Lên ngôi trong hoàn cảnh khó khăn"
+        ],
+        "legacy": "Sự kết thúc ngắn ngủi của nhà Đinh cho thấy yêu cầu về một lãnh đạo mạnh mẽ để bảo vệ đất nước.",
+        "timeline": [
+          {
+            "year": 979,
+            "title": "Lên ngôi",
+            "type": "Chính trị",
+            "description": "Nối ngôi khi 6 tuổi.",
+            "impact": "Quyền lực thực tế trong tay nhiếp chính"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nhà Tiền Lê",
+    "period": "980 - 1009",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Lê Hoàn",
+        "title": "Lê Đại Hành",
+        "birth_death": "941 - 1005",
+        "reign": "980 - 1005",
+        "summary": "Vị tướng tài ba đánh tan quân Tống, mở rộng bờ cõi về phía Nam.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "achievements": [
+          "Phá Tống năm 981",
+          "Dẹp Chiêm Thành",
+          "Xây dựng đất nước"
+        ],
+        "legacy": "Lê Đại Hành tiếp tục sự nghiệp của nhà Đinh, củng cố nền độc lập.",
+        "timeline": [
+          {
+            "year": 981,
+            "title": "Chiến thắng quân Tống",
+            "type": "Quân sự",
+            "description": "Đánh bại cuộc xâm lược của nhà Tống.",
+            "impact": "Bảo vệ vững chắc biên cương"
+          }
+        ],
+        "overview": ""
+      },
+      {
+        "name": "Lê Long Đĩnh",
+        "title": "Lê Ngọa Triều",
+        "birth_death": "986 - 1009",
+        "reign": "1005 - 1009",
+        "summary": "Vị vua tàn bạo mở đầu sự suy tàn của nhà Tiền Lê.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "achievements": [],
+        "legacy": "Sự xa hoa và độc ác của Lê Long Đĩnh khiến triều đình bất mãn, dẫn đến sự chuyển giao quyền lực sang nhà Lý.",
+        "timeline": [
+          {
+            "year": 1009,
+            "title": "Qua đời",
+            "type": "Chính trị",
+            "description": "Băng hà trong sự chán ghét của quần thần.",
+            "impact": "Nhà Tiền Lê chấm dứt"
+          }
+        ],
+        "overview": ""
+      }
+    ]
+  },
+  {
+    "name": "Nhà Lý",
+    "period": "1009 - 1225",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Lý Công Uẩn",
+        "title": "Lý Thái Tổ",
+        "birth_death": "974 - 1028",
+        "reign": "1009 - 1028",
+        "summary": "Vị vua khai sáng triều Lý, dời đô từ Hoa Lư ra Thăng Long.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "achievements": [
+          "Dời đô ra Thăng Long",
+          "Xây dựng quốc gia độc lập hùng mạnh",
+          "Phát triển Phật giáo"
+        ],
+        "legacy": "Quyết định dời đô của Lý Thái Tổ đã tạo nên một trung tâm chính trị, kinh tế, văn hóa mới cho Đại Việt.",
+        "timeline": [
+          {
+            "year": 1010,
+            "title": "Chiếu dời đô",
+            "type": "Chính trị",
+            "description": "Ban Chiếu dời đô, chuyển kinh đô từ Hoa Lư về Đại La, đổi tên là Thăng Long.",
+            "impact": "Đặt nền móng cho sự phát triển của Thăng Long - Hà Nội"
+          }
+        ],
+        "overview": ""
+      },
+      {
+        "name": "Lý Nhân Tông",
+        "title": "Lý Nhân Tông",
+        "birth_death": "1066 - 1127",
+        "reign": "1072 - 1127",
+        "summary": "Vị vua anh minh trị vì lâu nhất thời Lý, đánh Tống, xây dựng Văn Miếu.",
+        "achievements": [
+          "Đánh tan quân Tống (1075-1077)",
+          "Lập Văn Miếu - Quốc Tử Giám",
+          "Khuyến khích nông nghiệp, giáo dục"
+        ],
+        "legacy": "Thời Lý Nhân Tông là đỉnh cao văn hiến của Đại Việt.",
+        "timeline": [
+          {
+            "year": 1076,
+            "title": "Xây Văn Miếu",
+            "type": "Văn hóa",
+            "description": "Cho lập Văn Miếu, nơi thờ Khổng Tử và các bậc hiền tài.",
+            "impact": "Nền giáo dục Nho học bắt đầu"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Nhà Trần",
+    "period": "1225 - 1400",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Trần Cảnh",
+        "title": "Trần Thái Tông",
+        "birth_death": "1218 - 1277",
+        "reign": "1225 - 1258",
+        "summary": "Khai quốc công thần nhà Trần, củng cố vương triều thông qua cuộc cách mạng cung đình.",
+        "achievements": [
+          "Đánh bại cuộc xâm lược lần thứ nhất của Mông Cổ (1258)",
+          "Xây dựng chế độ Thái thượng hoàng"
+        ],
+        "legacy": "Đặt nền tảng vững chắc cho sự thịnh trị và các chiến thắng quân sự sau này của nhà Trần.",
+        "timeline": [
+          {
+            "year": 1225,
+            "title": "Lên ngôi",
+            "type": "Chính trị",
+            "description": "Được Lý Chiêu Hoàng nhường ngôi, lập ra nhà Trần.",
+            "impact": "Chuyển giao triều đại hòa bình"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      },
+      {
+        "name": "Trần Quốc Tuấn",
+        "title": "Hưng Đạo Đại Vương (truy phong)",
+        "birth_death": "1228 - 1300",
+        "reign": "Không làm vua",
+        "summary": "Quân sự kiệt xuất, linh hồn của kháng chiến chống Nguyên - Mông.",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        },
+        "overview": "Dù không phải là hoàng đế, nhưng Trần Hưng Đạo được liệt vào đây vì vai trò đặc biệt như một nhà lãnh đạo tối cao trong kháng chiến.",
+        "achievements": [
+          "Hai lần đánh tan quân Nguyên",
+          "Soạn 'Hịch tướng sĩ'"
+        ],
+        "legacy": "Trần Hưng Đạo trở thành biểu tượng bất tử của lòng yêu nước và tài thao lược quân sự Việt Nam.",
+        "timeline": [
+          {
+            "year": 1285,
+            "title": "Chiến thắng Hàm Tử - Chương Dương",
+            "type": "Quân sự",
+            "description": "Đánh tan 50 vạn quân Nguyên.",
+            "impact": "Giành lại Thăng Long, tạo bước ngoặt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nhà Hồ",
+    "period": "1400 - 1407",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Hồ Quý Ly",
+        "title": "Hồ Quý Ly",
+        "birth_death": "1336 - ?",
+        "reign": "1400 - 1401",
+        "summary": "Nhà cải cách lớn, cướp ngôi nhà Trần và thực hiện nhiều chính sách táo bạo.",
+        "achievements": [
+          "Phát hành tiền giấy",
+          "Hạn chế ruộng tư",
+          "Cải cách giáo dục, thi cử"
+        ],
+        "legacy": "Những cải cách của Hồ Quý Ly mang tầm nhìn xa nhưng không được lòng dân, góp phần khiến nhà Hồ chóng sụp đổ trước giặc Minh.",
+        "timeline": [
+          {
+            "year": 1400,
+            "title": "Lập nhà Hồ",
+            "type": "Chính trị",
+            "description": "Phế truất Trần Thiếu Đế, tự xưng đế.",
+            "impact": "Mở ra triều đại mới"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Nhà Hậu Lê",
+    "period": "1428 - 1789",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Lê Lợi",
+        "title": "Lê Thái Tổ",
+        "birth_death": "1385 - 1433",
+        "reign": "1428 - 1433",
+        "summary": "Anh hùng áo vải Lam Sơn đánh đuổi quân Minh, lập ra nhà Hậu Lê.",
+        "achievements": [
+          "Khởi nghĩa Lam Sơn thắng lợi",
+          "Ban hành Bình Ngô đại cáo",
+          "Phục hồi đất nước"
+        ],
+        "legacy": "Lê Thái Tổ biểu tượng cho tinh thần quật cường và ý chí giành độc lập.",
+        "timeline": [
+          {
+            "year": 1418,
+            "title": "Dựng cờ khởi nghĩa",
+            "type": "Quân sự",
+            "description": "Lê Lợi phất cờ ở Lam Sơn, bắt đầu 10 năm kháng Minh.",
+            "impact": "Mở ra cuộc chiến giải phóng dân tộc"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      },
+      {
+        "name": "Lê Tư Thành",
+        "title": "Lê Thánh Tông",
+        "birth_death": "1442 - 1497",
+        "reign": "1460 - 1497",
+        "summary": "Minh quân lừng lẫy, đưa Đại Việt vào thời thịnh trị bậc nhất về mọi mặt.",
+        "achievements": [
+          "Cải cách hành chính, quân đội",
+          "Ban hành bộ luật Hồng Đức",
+          "Mở rộng bờ cõi phía Nam"
+        ],
+        "legacy": "Thời kỳ Hồng Đức được xem là mẫu mực của chế độ quân chủ Việt Nam.",
+        "timeline": [
+          {
+            "year": 1471,
+            "title": "Chinh phạt Chiêm Thành",
+            "type": "Quân sự",
+            "description": "Sáp nhập vùng đất phía Nam vào lãnh thổ.",
+            "impact": "Mở rộng đáng kể lãnh thổ Đại Việt"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      },
+      {
+        "name": "Nguyễn Trãi",
+        "title": "Ức Trai",
+        "birth_death": "1380 - 1440",
+        "reign": "",
+        "summary": "Những đóng góp của Nguyễn Trãi vô cùng lớn lao trong lịch sử của dân tộc. Ông là vị anh hùng, một nhà quân sự, chính trị và nhà văn hóa kiệt xuất của dân tộc. Tài năng của ông trải đều trên các lĩnh vực, được hậu thế kính phục.",
+        "images": {
+          "portrait": "/api/history/images/dynasties/nguyen-trai-122-10-12-48-1778834077396.jpg",
+          "statue": "/api/history/images/dynasties/nguyen-trai-122-10-12-48-1778833808450.jpg",
+          "gallery": []
+        },
+        "overview": "",
+        "timeline": [
+          {
+            "year": "1339",
+            "type": "Khác",
+            "title": "gdfgdfgdfg",
+            "description": "dsggsdg",
+            "impact": "dfgdfgfd"
+          }
+        ],
+        "achievements": [
+          "Những đóng góp của Nguyễn Trãi vô cùng lớn lao trong lịch sử của dân tộc. Ông là vị anh hùng, một nhà quân sự, chính trị và nhà văn hóa kiệt xuất của dân tộc. Tài năng của ông trải đều trên các lĩnh vực, được hậu thế kính phục."
+        ],
+        "legacy": ""
+      }
+    ]
+  },
+  {
+    "name": "Nhà Mạc",
+    "period": "1527 - 1592",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Mạc Đăng Dung",
+        "title": "Mạc Thái Tổ",
+        "birth_death": "1483 - 1541",
+        "reign": "1527 - 1529",
+        "summary": "Đại thần cướp ngôi nhà Lê sơ, lập ra triều Mạc.",
+        "achievements": [
+          "Ổn định đất nước sau biến động",
+          "Khuyến khích sản xuất nông nghiệp"
+        ],
+        "legacy": "Dù bị coi là nghịch tặc, nhà Mạc vẫn có những đóng góp nhất định về kinh tế, trước khi bị lực lượng Lê - Trịnh đánh bật khỏi Thăng Long.",
+        "timeline": [
+          {
+            "year": 1527,
+            "title": "Lập nhà Mạc",
+            "type": "Chính trị",
+            "description": "Phế truất Lê Cung Hoàng, lên ngôi.",
+            "impact": "Mở đầu thời kỳ Nam - Bắc triều"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Nhà Tây Sơn",
+    "period": "1778 - 1802",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Nguyễn Huệ",
+        "title": "Quang Trung Hoàng đế",
+        "birth_death": "1753 - 1792",
+        "reign": "1788 - 1792",
+        "summary": "Thiên tài quân sự, đánh bại quân Xiêm, quân Thanh, thống nhất đất nước.",
+        "achievements": [
+          "Chiến thắng Ngọc Hồi - Đống Đa",
+          "Cải cách chữ Nôm",
+          "Khuyến khích thương mại"
+        ],
+        "legacy": "Quang Trung được tôn vinh là một trong những vị hoàng đế kiệt xuất nhất lịch sử Việt Nam.",
+        "timeline": [
+          {
+            "year": 1789,
+            "title": "Đại phá quân Thanh",
+            "type": "Quân sự",
+            "description": "Tiến quân thần tốc ra Bắc, quét sạch 29 vạn quân Thanh.",
+            "impact": "Bảo vệ nền độc lập, uy danh lừng lẫy"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "Nhà Nguyễn",
+    "period": "1802 - 1945",
+    "images": {
+      "banner": "",
+      "map": "",
+      "artifacts": []
+    },
+    "kings": [
+      {
+        "name": "Nguyễn Phúc Ánh",
+        "title": "Gia Long",
+        "birth_death": "1762 - 1819",
+        "reign": "1802 - 1819",
+        "summary": "Vị vua đầu triều Nguyễn, thống nhất Việt Nam sau nhiều năm nội chiến.",
+        "achievements": [
+          "Đánh bại nhà Tây Sơn",
+          "Đặt quốc hiệu Việt Nam",
+          "Ban hành luật Gia Long"
+        ],
+        "legacy": "Gia Long hoàn tất công cuộc thống nhất, nhưng cũng gây ra những tranh cãi vì cầu viện nước ngoài.",
+        "timeline": [
+          {
+            "year": 1802,
+            "title": "Lên ngôi",
+            "type": "Chính trị",
+            "description": "Đăng quang ở Phú Xuân, lập ra triều Nguyễn.",
+            "impact": "Triều đại cuối cùng bắt đầu"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      },
+      {
+        "name": "Nguyễn Phúc Vĩnh Thụy",
+        "title": "Bảo Đại",
+        "birth_death": "1913 - 1997",
+        "reign": "1925 - 1945",
+        "summary": "Hoàng đế cuối cùng của Việt Nam, thoái vị trong Cách mạng tháng Tám.",
+        "achievements": [],
+        "legacy": "Sự kết thúc của chế độ phong kiến Việt Nam gắn liền với tên tuổi Bảo Đại.",
+        "timeline": [
+          {
+            "year": 1945,
+            "title": "Thoái vị",
+            "type": "Chính trị",
+            "description": "Trao ấn kiếm cho chính phủ Việt Nam Dân chủ Cộng hòa.",
+            "impact": "Chính thức chấm dứt 143 năm nhà Nguyễn và hàng ngàn năm phong kiến"
+          }
+        ],
+        "overview": "",
+        "images": {
+          "portrait": "",
+          "statue": "",
+          "gallery": []
+        }
+      }
+    ]
+  }
+]

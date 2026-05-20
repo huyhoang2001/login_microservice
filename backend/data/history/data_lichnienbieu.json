@@ -1,0 +1,141 @@
+[
+  {
+    "id": "hol_001",
+    "category": "holiday",
+    "title": "Giỗ Tổ Hùng Vương",
+    "description": "Ngày tưởng nhớ công lao dựng nước của các Vua Hùng.",
+    "date": {
+      "day": 10,
+      "month": 3,
+      "year": null,
+      "lunar": true,
+      "calendar_type": "lunar",
+      "display": "10/3"
+    },
+    "recurring": true,
+    "recurring_type": "lunar_annual",
+    "significance": "national",
+    "related_dynasty": "Hồng Bàng",
+    "related_king": null,
+    "related_person": null,
+    "location": "Phú Thọ (Đền Hùng)",
+    "source": "Truyền thống dân tộc",
+    "tags": ["gio-to", "hung-vuong", "am-lich"],
+    "solar_date": null,
+    "lunar_date": {
+      "day": 10,
+      "month": 3,
+      "year": null,
+      "lunar": true,
+      "calendar_type": "lunar",
+      "display": "10/3"
+    },
+    "calendar_type": "lunar"
+  },
+  {
+    "id": "evt_002",
+    "category": "holiday",
+    "title": "Ngày Giải phóng miền Nam, thống nhất đất nước",
+    "description": "Sự kiện 30/4/1975, kết thúc chiến tranh và thống nhất đất nước.",
+    "date": {
+      "day": 30,
+      "month": 4,
+      "year": 1975,
+      "lunar": false,
+      "calendar_type": "solar",
+      "display": "30/4/1975"
+    },
+    "recurring": true,
+    "recurring_type": "annual",
+    "significance": "national",
+    "related_dynasty": null,
+    "related_king": null,
+    "related_person": null,
+    "location": "Sài Gòn (TP.HCM)",
+    "source": "Lịch sử Việt Nam",
+    "tags": ["giai-phong", "thong-nhat", "30-4"],
+    "calendar_type": "solar",
+    "solar_date": {
+      "day": 30,
+      "month": 4,
+      "year": 1975,
+      "lunar": false,
+      "calendar_type": "solar",
+      "display": "30/4/1975"
+    },
+    "lunar_date": null
+  },
+  {
+    "id": "bat_001",
+    "category": "battle",
+    "title": "Chiến thắng Bạch Đằng",
+    "description": "Ngô Quyền đánh bại quân Nam Hán, mở ra thời kỳ độc lập tự chủ.",
+    "date": {
+      "day": 0,
+      "month": 0,
+      "year": 938,
+      "lunar": false,
+      "calendar_type": "solar",
+      "display": "Năm 938"
+    },
+    "recurring": false,
+    "recurring_type": "none",
+    "significance": "national",
+    "related_dynasty": "Nhà Ngô",
+    "related_king": "Ngô Quyền",
+    "related_person": {
+      "name": "Ngô Quyền",
+      "birth_death": "898 - 944",
+      "portrait": ""
+    },
+    "location": "Sông Bạch Đằng",
+    "source": "Đại Việt sử ký toàn thư",
+    "tags": ["bach-dang", "ngo-quyen", "quan-su"],
+    "solar_date": {
+      "day": 0,
+      "month": 0,
+      "year": 938,
+      "lunar": false,
+      "calendar_type": "solar",
+      "display": "Năm 938"
+    },
+    "lunar_date": null,
+    "calendar_type": "solar"
+  },
+  {
+    "id": "per_001",
+    "category": "birthday",
+    "title": "Sinh nhật Trần Hưng Đạo",
+    "description": "Ngày sinh của Quốc công Tiết chế Trần Hưng Đạo.",
+    "date": {
+      "day": 0,
+      "month": 0,
+      "year": 1228,
+      "lunar": false,
+      "display": "Năm 1228"
+    },
+    "recurring": false,
+    "recurring_type": "none",
+    "significance": "cultural",
+    "related_dynasty": "Nhà Trần",
+    "related_king": null,
+    "related_person": {
+      "name": "Trần Hưng Đạo",
+      "birth_death": "1228 - 1300",
+      "portrait": ""
+    },
+    "location": "Nam Định",
+    "source": "Sử liệu tổng hợp",
+    "tags": ["tran-hung-dao", "sinh-nhat"],
+    "solar_date": {
+      "day": 0,
+      "month": 0,
+      "year": 1228,
+      "lunar": false,
+      "calendar_type": "solar",
+      "display": "Năm 1228"
+    },
+    "lunar_date": null,
+    "calendar_type": "solar"
+  }
+]
