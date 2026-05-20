@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const { isAuthenticated, user, logout } = useAuth();
 
-  console.log("Home page - User:", user, "isAuthenticated:", isAuthenticated);
-
   const handleLogout = async () => {
     await logout();
   };
